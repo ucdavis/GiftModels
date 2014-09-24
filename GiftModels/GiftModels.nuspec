@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>GiftModels</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Scott Kirkland</authors>
+    <owners>Scott Kirkland</owners>
+    <projectUrl>https://github.com/ucdavis/GiftModels</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Tag1 Tag2</tags>
+  </metadata>
+</package>
