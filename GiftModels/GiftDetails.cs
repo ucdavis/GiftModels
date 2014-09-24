@@ -1,5 +1,8 @@
 ﻿namespace GiftModels
 {
+    /// <summary>
+    /// Base model for containing detail about a gift, including donor and allocation info
+    /// </summary>
     public class GiftDetails
     {
         public GiftDetails()
