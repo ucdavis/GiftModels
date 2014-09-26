@@ -8,12 +8,12 @@ namespace GiftModels.Test
     [TestClass]
     public class ModelTests
     {
+        private readonly string _content = File.ReadAllText("GiftExample.json");
+
         [TestMethod]
         public void Deserialize()
         {
-            var content = File.ReadAllText("GiftExample.json");
-
-            var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(content);
+            var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(_content);
 
             Assert.IsNotNull(giftdetail);
             Assert.AreEqual("123456789", giftdetail.PrimaryDonor.Detail.Id_Number);
