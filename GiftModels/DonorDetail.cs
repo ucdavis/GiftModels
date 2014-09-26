@@ -18,5 +18,6 @@
         public string State_Code { get; set; }
         public string Zipcode { get; set; }
         public string Address { get; set; }
+        public string Gift_Associated_Code { get; set; }
     }
 }
