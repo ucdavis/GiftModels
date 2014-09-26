@@ -13,6 +13,8 @@
 
         public DonorContainer PrimaryDonor { get; set; }
 
+        public DonorContainer[] AdditionalDonors { get; set; }
+
         public AllocationContainer[] Allocations { get; set; }
 
         public PaymentContainer Payment { get; set; }
