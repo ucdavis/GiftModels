@@ -8,7 +8,7 @@
         public string DisplayName { get; set; }
         public string FundName { get; set; }
         public string DeptartmentCode { get; set; }
-        public string School { get; set; }
+        public string SchoolCode { get; set; }
 
         /// <summary>
         /// F: Foundation
