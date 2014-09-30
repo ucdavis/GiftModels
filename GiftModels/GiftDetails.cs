@@ -22,6 +22,11 @@
         public string SpecialInstructions { get; set; }
 
         public string AppealCode { get; set; }
+        public string CampaignCode { get; set; }
+
+        public double Amount { get; set; }
+
+        public double CreditAmount { get; set; }
 
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
