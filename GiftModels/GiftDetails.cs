@@ -9,6 +9,7 @@
         {
             PrimaryDonor = new DonorContainer();
             Allocations = new AllocationContainer[0];
+            AdditionalDonors = new DonorContainer[0];
         }
 
         public DonorContainer PrimaryDonor { get; set; }
