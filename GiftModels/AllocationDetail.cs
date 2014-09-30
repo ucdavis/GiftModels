@@ -2,13 +2,18 @@
 {
     public class AllocationDetail
     {
-        public string Allocation_Code { get; set; }
+        public string AllocationCode { get; set; }
         public string Account { get; set; }
-        public string Long_Name { get; set; }
+        public string LongName { get; set; }
         public string DisplayName { get; set; }
-        public string Fund_Name { get; set; }
-        public string Alloc_Dept_Code { get; set; }
-        public string Alloc_School { get; set; }
+        public string FundName { get; set; }
+        public string DeptartmentCode { get; set; }
+        public string School { get; set; }
+
+        /// <summary>
+        /// F: Foundation
+        /// R: Regents
+        /// </summary>
         public string Agency { get; set; }
     }
 }
