@@ -1,44 +1,34 @@
 ﻿{
     "primaryDonor": {
       "detail": {
-        "Id_Number": "123456789",
-        "First_Name": "Bob",
-        "Last_Name": "Dobalina",
-        "FullName": "Bob Dobalina",
-        "Jnt_Gifts_Ind": "N",
+        "IdNumber": "123456789",
+        "FirstName": "Bob",
+        "LastName": "Dobalina",
         "IsJoint": false,
         "SpouseName": " ",
         "ReportName": "Dobalina, Bob K.",
-        "DisplayName": "Bob Dobalina (123456789)",
         "Email": null,
-        "EmailHash": null,
         "Street1": "1234 Sesame Street",
         "City": "Oakland",
-        "State_Code": "CA",
-        "Zipcode": "94618",
-        "Address": "1234 Sesame Street , Oakland, CA 94618"
+        "State": "CA",
+        "Zip": "94618"
       }
     },
     "additionalDonors": [
       {
         "detail": {
-          "Id_Number": "987654321",
-          "First_Name": "John",
-          "Last_Name": "Snow",
-          "FullName": "John Snow",
-          "Jnt_Gifts_Ind": "N",
+          "IdNumber": "987654321",
+          "FirstName": "John",
+          "LastName": "Snow",
           "IsJoint": false,
           "SpouseName": " ",
           "ReportName": "Snow, John",
-          "DisplayName": "John Snow (987654321)",
           "Email": null,
-          "EmailHash": null,
           "Street1": "1 Wall Ave",
           "City": "North",
-          "State_Code": "CA",
-          "Zipcode": "90210",
-          "Address": "1 Wall Ave, North, CA 90210",
-          "Gift_Associated_Code": "O"
+          "State": "CA",
+          "Zip": "90210",
+          "GiftAssociatedCode": "O"
         }
       }
     ],
@@ -50,26 +40,26 @@
       {
         "percentage": 25,
         "detail": {
-          "Allocation_Code": "123010",
+          "AllocationCode": "123010",
           "Account": "123010",
-          "Long_Name": "O'Donnell Family Scholarship in Agricutural and Resource Economics",
+          "LongName": "O'Donnell Family Scholarship in Agricutural and Resource Economics",
           "DisplayName": "123010/123010 (O'Donnell Family Scholarship in Agricutural and Resource Economics)",
-          "Fund_Name": "ENDOWMENT",
-          "Alloc_Dept_Code": "AARE",
-          "Alloc_School": "AAES",
+          "FundName": "ENDOWMENT",
+          "DeptartmentCode": "AARE",
+          "SchoolCode": "AAES",
           "Agency": "F"
         }
       },
       {
         "percentage": 75,
         "detail": {
-          "Allocation_Code": "122028",
+          "AllocationCode": "122028",
           "Account": "122028",
-          "Long_Name": "Bill and Pat Williams Forage Research and Outreach Endowed Fund",
+          "LongName": "Bill and Pat Williams Forage Research and Outreach Endowed Fund",
           "DisplayName": "122028/122028 (Bill and Pat Williams Forage Research and Outreach Endowed Fund)",
-          "Fund_Name": "ENDOWMENT",
-          "Alloc_Dept_Code": "APSC",
-          "Alloc_School": "AAES",
+          "FundName": "ENDOWMENT",
+          "DeptartmentCode": "APSC",
+          "SchoolCode": "AAES",
           "Agency": "F"
         }
       }
