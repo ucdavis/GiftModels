@@ -20,5 +20,12 @@
         public PaymentContainer Payment { get; set; }
 
         public string SpecialInstructions { get; set; }
+
+        public string AppealCode { get; set; }
+
+        #region Advance Properties
+        public string AdvanceReceiptNumber { get; set; }
+        public string AdvanceBatchNumber { get; set; }
+        #endregion
     }
 }
