@@ -47,6 +47,7 @@ namespace GiftModels
                 return sBuilder.ToString(); // Return the hexadecimal string. 
             }
         }
+        public string Phone { get; set; }
         public string Street1 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
