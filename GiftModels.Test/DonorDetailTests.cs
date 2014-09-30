@@ -353,5 +353,51 @@ namespace GiftModels.Test
             #endregion Assert
         }
         #endregion PrimaryDonor Tests
+
+        #region AdditionalDonor Tests
+
+        [TestMethod]
+        public void TestAdditionalDonorCount1()
+        {
+            #region Arrange
+            
+            #endregion Arrange
+
+            #region Act
+            var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(_content);
+            #endregion Act
+
+            #region Assert
+            Assert.IsNotNull(giftdetail);
+            Assert.AreEqual(1, giftdetail.AdditionalDonors.Count());
+            #endregion Assert		
+        }
+
+        [TestMethod]
+        public void TestAdditionalDonorCount2()
+        {
+            #region Arrange
+            var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(_content);
+            giftdetail.AdditionalDonors = new DonorContainer[2];
+            giftdetail.AdditionalDonors[0] = new DonorContainer();
+            giftdetail.AdditionalDonors[0].Detail = new DonorDetail();
+            giftdetail.AdditionalDonors[0].Detail.FirstName = "FirstName1";
+            
+            giftdetail.AdditionalDonors[1] = new DonorContainer();
+            giftdetail.AdditionalDonors[1].Detail = new DonorDetail();
+            giftdetail.AdditionalDonors[1].Detail.FirstName = "FirstName2";
+            var serialized = JsonConvert.SerializeObject(giftdetail);
+            #endregion Arrange
+
+            #region Act
+            var giftdetail2 = JsonConvert.DeserializeObject<GiftDetails>(serialized);
+            #endregion Act
+
+            #region Assert
+            Assert.IsNotNull(giftdetail2);
+            Assert.AreEqual(2, giftdetail2.AdditionalDonors.Count());
+            #endregion Assert
+        } 
+        #endregion AdditionalDonor Tests
     }
 }
