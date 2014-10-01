@@ -47,18 +47,11 @@ namespace GiftModels
                 return sBuilder.ToString(); // Return the hexadecimal string. 
             }
         }
+        public string Phone { get; set; }
         public string Street1 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
         public string Address { get { return string.Format("{0}, {1}, {2} {3}", Street1, City, State, Zip); } }
-
-        /// <summary>
-        /// Used to indicate if this donor is honorary, memorial, etc
-        /// M: In Memory of
-        /// H: In Honor of
-        /// O: Other
-        /// </summary>
-        public string GiftAssociatedCode { get; set; }
     }
 }

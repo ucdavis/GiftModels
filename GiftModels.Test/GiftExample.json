@@ -12,7 +12,8 @@
         "City": "Oakland",
         "State": "CA",
         "Zip": "94618"
-      }
+      },
+      "GiftAssociatedCode":  "P"
     },
     "additionalDonors": [
       {
@@ -27,9 +28,9 @@
           "Street1": "1 Wall Ave",
           "City": "North",
           "State": "CA",
-          "Zip": "90210",
-          "GiftAssociatedCode": "O"
-        }
+          "Zip": "90210"
+        },
+        "GiftAssociatedCode": "O"
       }
     ],
     "payment": {
