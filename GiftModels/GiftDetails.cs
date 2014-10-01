@@ -8,6 +8,7 @@
         public GiftDetails()
         {
             PrimaryDonor = new DonorContainer();
+            AdditionalDonors = new DonorContainer[0];
             Allocations = new AllocationContainer[0];
         }
 
