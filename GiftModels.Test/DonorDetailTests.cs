@@ -329,7 +329,7 @@ namespace GiftModels.Test
 
             #region Assert
             Assert.IsNotNull(giftdetail);
-            Assert.AreEqual(null, giftdetail.PrimaryDonor.GiftAssociatedCode);
+            Assert.AreEqual("P", giftdetail.PrimaryDonor.GiftAssociatedCode);
             #endregion Assert
         }
 
