@@ -329,7 +329,7 @@ namespace GiftModels.Test
 
             #region Assert
             Assert.IsNotNull(giftdetail);
-            Assert.AreEqual(null, giftdetail.PrimaryDonor.Detail.GiftAssociatedCode);
+            Assert.AreEqual(null, giftdetail.PrimaryDonor.GiftAssociatedCode);
             #endregion Assert
         }
 
@@ -339,7 +339,7 @@ namespace GiftModels.Test
         {
             #region Arrange
             var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(_content);
-            giftdetail.PrimaryDonor.Detail.GiftAssociatedCode = "M";
+            giftdetail.PrimaryDonor.GiftAssociatedCode = "M";
             var serialized = JsonConvert.SerializeObject(giftdetail);
             #endregion Arrange
 
@@ -349,7 +349,7 @@ namespace GiftModels.Test
 
             #region Assert
             Assert.IsNotNull(giftdetail2);
-            Assert.AreEqual("M", giftdetail2.PrimaryDonor.Detail.GiftAssociatedCode);
+            Assert.AreEqual("M", giftdetail2.PrimaryDonor.GiftAssociatedCode);
             #endregion Assert
         }
         #endregion PrimaryDonor Tests
