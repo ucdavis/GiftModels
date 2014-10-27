@@ -1,4 +1,6 @@
-﻿namespace GiftModels
+﻿using System;
+
+namespace GiftModels
 {
     /// <summary>
     /// Base model for containing detail about a gift, including donor and allocation info 
@@ -11,6 +13,9 @@
             AdditionalDonors = new DonorContainer[0];
             Allocations = new AllocationContainer[0];
         }
+
+        public string Source { get; set; }
+        public Guid? SourceId { get; set; }
 
         public DonorContainer PrimaryDonor { get; set; }
 
