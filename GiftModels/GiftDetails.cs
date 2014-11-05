@@ -30,9 +30,9 @@ namespace GiftModels
         public string AppealCode { get; set; }
         public string CampaignCode { get; set; }
 
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
-        public double CreditAmount { get; set; }
+        public decimal CreditAmount { get; set; }
 
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
