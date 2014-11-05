@@ -4,9 +4,9 @@ namespace GiftModels
     {
         public DonorDetail Detail { get; set; }
 
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
-        public double CreditAmount { get; set; }
+        public decimal CreditAmount { get; set; }
 
         /// <summary>
         /// Used to indicate if this donor is honorary, memorial, etc
