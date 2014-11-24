@@ -46,15 +46,5 @@ namespace GiftModels
         /// </summary>
         public virtual string CardTransactionReferenceNumber { get; set; }
         #endregion
-
-        /// <summary>
-        /// KFS Document Number
-        /// </summary>
-        public virtual string KfsDocumentNumber { get; set; }
-
-        /// <summary>
-        /// KFS Reference Key
-        /// </summary>
-        public virtual string KfsKey { get; set; }
     }
 }

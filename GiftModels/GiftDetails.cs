@@ -28,6 +28,7 @@ namespace GiftModels
         public string SpecialInstructions { get; set; }
 
         public string AppealCode { get; set; }
+
         public string CampaignCode { get; set; }
 
         public decimal Amount { get; set; }
@@ -37,6 +38,18 @@ namespace GiftModels
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
+        #endregion
+
+        #region Kfs Properties
+        /// <summary>
+        /// KFS Document Number
+        /// </summary>
+        public virtual string KfsDocumentNumber { get; set; }
+
+        /// <summary>
+        /// KFS Reference Key
+        /// </summary>
+        public virtual string KfsKey { get; set; }
         #endregion
     }
 }
