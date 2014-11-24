@@ -4,9 +4,14 @@ namespace GiftModels
 {
     public class PaymentContainer
     {
+        public string Source { get; set; }
+        public Guid? SourceId { get; set; }
         public string Type { get; set; }
         public decimal? Amount { get; set; }
+
+        #region Check Properties
         public string CheckNumber { get; set; }
+        #endregion
 
         #region Credit Card Properties
         /// <summary>
