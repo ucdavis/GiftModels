@@ -35,6 +35,8 @@ namespace GiftModels
 
         public decimal CreditAmount { get; set; }
 
+        public bool IsRecurring { get; set; }
+
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
