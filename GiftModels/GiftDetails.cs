@@ -53,5 +53,9 @@ namespace GiftModels
         /// </summary>
         public virtual string KfsKey { get; set; }
         #endregion
+
+        #region GREAT Properties
+        public Guid? GreatId { get; set; }
+        #endregion
     }
 }
