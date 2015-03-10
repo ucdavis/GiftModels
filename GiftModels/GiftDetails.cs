@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GiftModels
 {
@@ -10,8 +11,8 @@ namespace GiftModels
         public GiftDetails()
         {
             PrimaryDonor = new DonorContainer();
-            AdditionalDonors = new DonorContainer[0];
-            Allocations = new AllocationContainer[0];
+            AdditionalDonors = new List<DonorContainer>();
+            Allocations = new List<AllocationContainer>();
         }
 
         public string Source { get; set; }
@@ -19,9 +20,9 @@ namespace GiftModels
 
         public DonorContainer PrimaryDonor { get; set; }
 
-        public DonorContainer[] AdditionalDonors { get; set; }
+        public IList<DonorContainer> AdditionalDonors { get; set; }
 
-        public AllocationContainer[] Allocations { get; set; }
+        public IList<AllocationContainer> Allocations { get; set; }
 
         public PaymentContainer Payment { get; set; }
 
