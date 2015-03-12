@@ -39,7 +39,7 @@
     },
     "allocations": [
       {
-        "percentage": 25,
+        "amount": 25,
         "detail": {
           "AllocationCode": "123010",
           "Account": "123010",
@@ -52,7 +52,7 @@
         }
       },
       {
-        "percentage": 75,
+        "amount": 375,
         "detail": {
           "AllocationCode": "122028",
           "Account": "122028",
