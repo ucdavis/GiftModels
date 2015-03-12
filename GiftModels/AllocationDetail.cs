@@ -9,7 +9,20 @@
         {
             get
             {
-                return string.Format("{0}/{1} ({2})", AllocationCode, Account, LongName);
+                var result = "";
+                if (!string.IsNullOrWhiteSpace(AllocationCode))
+                {
+                    result += AllocationCode + "/";
+                }
+                if (!string.IsNullOrWhiteSpace(Account))
+                {
+                    result += Account + " ";
+                }
+                if (!string.IsNullOrWhiteSpace(LongName))
+                {
+                    result += string.Format("({0})", LongName);
+                }
+                return result.Trim(' ', '/');
             }
         }
         public string FundName { get; set; }

@@ -13,8 +13,45 @@ namespace GiftModels
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ReportName { get; set; }
-        public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
-        public string DisplayName { get { return string.Format("{0} {1} ({2})", FirstName, LastName, IdNumber); } }
+
+        public string FullName
+        {
+            get
+            {
+                var result = "";
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    result += FirstName + " ";
+                }
+                if (!string.IsNullOrWhiteSpace(LastName))
+                {
+                    result += LastName;
+                }
+                return result.Trim();
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                var result = "";
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    result += FirstName + " ";
+                }
+                if (!string.IsNullOrWhiteSpace(LastName))
+                {
+                    result += LastName + " ";
+                }
+                if (!string.IsNullOrWhiteSpace(IdNumber))
+                {
+                    result += string.Format("({0})", IdNumber);
+                }
+                return result.Trim();
+            }
+        }
+
         public bool IsJoint { get; set; }
         public string SpouseName { get; set; }
         public string Email { get; set; }
@@ -53,7 +90,32 @@ namespace GiftModels
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
-        public string Address { get { return string.Format("{0}, {1}, {2} {3}", Street1, City, State, Zip); } }
+
+        public string Address
+        {
+            get
+            {
+                var result = "";
+                if (!string.IsNullOrWhiteSpace(Street1))
+                {
+                    result += Street1 + ", ";
+                }
+                if (!string.IsNullOrWhiteSpace(City))
+                {
+                    result += City + ", ";
+                }
+                if (!string.IsNullOrWhiteSpace(State))
+                {
+                    result += State + " ";
+                }
+                if (!string.IsNullOrWhiteSpace(Zip))
+                {
+                    result += Zip;
+                }
+                return result.Trim(' ', ',');
+            }
+        }
+
         public string Employer { get; set; }
     }
 }
