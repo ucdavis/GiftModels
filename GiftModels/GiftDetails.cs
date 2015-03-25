@@ -13,6 +13,7 @@ namespace GiftModels
             PrimaryDonor = new DonorContainer();
             AdditionalDonors = new List<DonorContainer>();
             Allocations = new List<AllocationContainer>();
+            Attachments = new List<Attachment>();
         }
 
         public string Source { get; set; }
@@ -23,6 +24,8 @@ namespace GiftModels
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
         public IList<AllocationContainer> Allocations { get; set; }
+
+        public IList<Attachment> Attachments { get; set; } 
 
         public PaymentContainer Payment { get; set; }
 
