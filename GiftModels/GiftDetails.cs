@@ -24,6 +24,8 @@ namespace GiftModels
 
         public IList<AllocationContainer> Allocations { get; set; }
 
+        public IList<Attachment> Attachments { get; set; } 
+
         public PaymentContainer Payment { get; set; }
 
         public string SpecialInstructions { get; set; }
