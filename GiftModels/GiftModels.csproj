@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AllocationContainer.cs" />
     <Compile Include="AllocationDetail.cs" />
+    <Compile Include="Attachment.cs" />
     <Compile Include="GiftDetails.cs" />
     <Compile Include="DonorContainer.cs" />
     <Compile Include="DonorDetail.cs" />
