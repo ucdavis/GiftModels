@@ -17,7 +17,8 @@ namespace GiftModels
         }
 
         public string Source { get; set; }
-        public Guid? SourceId { get; set; }
+        
+        public string SourceId { get; set; }
 
         public DonorContainer PrimaryDonor { get; set; }
 
