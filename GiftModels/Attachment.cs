@@ -8,5 +8,6 @@ namespace GiftModels
         public string Uri { get; set; }
         public string Identifier { get; set; }
         public string Size { get; set; }
+        public string Description { get; set; }
     }
 }
