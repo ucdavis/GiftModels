@@ -42,6 +42,8 @@ namespace GiftModels
 
         public bool IsRecurring { get; set; }
 
+        public string GiftFeeType { get; set; }
+
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
