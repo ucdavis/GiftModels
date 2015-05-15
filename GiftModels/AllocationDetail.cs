@@ -26,7 +26,7 @@
             }
         }
         public string FundName { get; set; }
-        public string DeptartmentCode { get; set; }
+        public string DepartmentCode { get; set; }
         public string SchoolCode { get; set; }
 
         /// <summary>
