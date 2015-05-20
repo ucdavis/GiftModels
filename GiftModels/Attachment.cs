@@ -1,13 +1,17 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace GiftModels
 {
     public class Attachment
     {
+        [Required]
         public string Name { get; set; }
 
         /// <summary>
         /// html file type (json, application, image, w/e)
         /// </summary>
+        [Required]
         public string ContentType { get; set; }
 
         /// <summary>
@@ -20,11 +24,13 @@ namespace GiftModels
         /// <summary>
         /// azure identifier
         /// </summary>
+        [Required]
         public string Identifier { get; set; }
 
         /// <summary>
         /// bytes
         /// </summary>
+        [Required]
         public string Size { get; set; }
 
         /// <summary>
