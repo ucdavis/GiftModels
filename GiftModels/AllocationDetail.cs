@@ -36,6 +36,11 @@
         public string Agency { get; set; }
         public string Purpose { get; set; }
 
+        /// <summary>
+        /// Catch all field
+        /// </summary>
+        public string ExtraReference { get; set; }
+
         #region Kfs Properties
         public string KfsAccount { get; set; }
         #endregion
