@@ -1,12 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GiftModels
 {
     public class PaymentContainer
     {
         public string Source { get; set; }
+
         public string SourceId { get; set; }
+
+        [Required]
         public string Type { get; set; }
+
         public decimal Amount { get; set; }
         
         /// <summary>

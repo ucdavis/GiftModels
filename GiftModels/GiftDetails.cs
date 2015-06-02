@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GiftModels
 {
@@ -36,12 +37,16 @@ namespace GiftModels
 
         public string CampaignCode { get; set; }
 
+        public string PledgeId { get; set; }
+
+        [Required]
         public decimal Amount { get; set; }
 
         public decimal CreditAmount { get; set; }
 
         public bool IsRecurring { get; set; }
 
+        [Required]
         public string GiftFeeType { get; set; }
 
         #region Advance Properties
