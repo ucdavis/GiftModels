@@ -29,6 +29,7 @@
         public string DepartmentCode { get; set; }
         public string SchoolCode { get; set; }
         public string DivisionCode { get; set; }
+        public string UcFundCode { get; set; }
 
         /// <summary>
         /// F: Foundation
