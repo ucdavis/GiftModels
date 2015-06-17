@@ -8,12 +8,15 @@ namespace GiftModels
 {
     public class FinancialDetails
     {
+        public string AdvanceReceiptNumber { get; set; }
         public virtual string KfsKey { get; set; }
         public virtual string PrimaryDonor { get; set; }
         public virtual decimal Total { get; set; }
         public virtual decimal TotalPremiumAmount { get; set; }
         public virtual string Prem { get; set; } //Yes/No
-        //public virtual decimal PermiumAdjustedAmount { get; set; } Great?
+        public virtual decimal PremiumAdjustedAmount {
+            get { return 0.0m; }//TODO: Do the calculation
+        }
         public virtual string AllocationNumber { get; set; }
         public virtual string AllocationName { get; set; }
         public virtual string Agency { get; set; }
@@ -32,8 +35,8 @@ namespace GiftModels
         public virtual decimal GiftBalance { get; set; }
         public virtual string UcFundChart { get; set; }
         public virtual string UcFundNumber { get; set; }
-        //public virtual string ScrubberChart { get; set; } //Great?
-        //public virtual string ScrubberAccount { get; set; } //Great?
+        public virtual string ScrubberChart { get; set; } //Great?
+        public virtual string ScrubberAccount { get; set; } //Great?
         public virtual string RevenueChart { get; set; }
         public virtual string RevenueAccount { get; set; }
         public virtual string PremiumChart { get; set; }
