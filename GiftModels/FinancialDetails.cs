@@ -70,7 +70,7 @@ namespace GiftModels
 
         public virtual string PremiumAccount { get; set; }
 
-        public virtual string PremiumAmount { get; set; }
+        public virtual decimal PremiumAmount { get; set; }
 
         public virtual string ExpenseChart { get; set; }
 
