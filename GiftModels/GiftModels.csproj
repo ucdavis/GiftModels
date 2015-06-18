@@ -46,6 +46,7 @@
     <Compile Include="GiftDetails.cs" />
     <Compile Include="DonorContainer.cs" />
     <Compile Include="DonorDetail.cs" />
+    <Compile Include="FinancialDetails.cs" />
     <Compile Include="PaymentContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
