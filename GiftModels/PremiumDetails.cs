@@ -27,7 +27,7 @@ namespace GiftModels
         public string SequenceNumber { get; set; }
 
         /// <summary>
-        /// This is a free text comment line about this premium, containing the KFS Chart and Account number separated by a dash, i.e. 3-1234567.
+        /// This is a free text comment line about this premium containing the KFS Chart and Account number separated by a dash, i.e. 3-1234567.
         /// </summary>
         public string Xcomment { get; set; }
 
