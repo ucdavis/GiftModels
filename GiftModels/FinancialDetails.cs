@@ -40,9 +40,9 @@ namespace GiftModels
 
         public virtual string AfFee { get; set; } // Y/N
 
-        public virtual string BenefitingUnitCode { get; set; }
+        public virtual string BenefittingUnitCode { get; set; }
 
-        public virtual string BenefitingUnitName { get; set; }
+        public virtual string BenefittingUnitName { get; set; }
 
         //public virtual DateTime JvBaDate { get; set; } //Great
 
