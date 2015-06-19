@@ -66,11 +66,7 @@ namespace GiftModels
 
         public virtual string RevenueAccount { get; set; }
 
-        public virtual string PremiumChart { get; set; }
-
-        public virtual string PremiumAccount { get; set; }
-
-        public virtual decimal PremiumAmount { get; set; }
+        public virtual IList<PremiumDetails> Premiums { get; set; }
 
         public virtual string ExpenseChart { get; set; }
 
