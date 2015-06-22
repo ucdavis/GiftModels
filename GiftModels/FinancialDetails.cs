@@ -18,7 +18,26 @@ namespace GiftModels
 
         public virtual decimal TotalPremiumAmount { get; set; }
 
-        public virtual string Prem { get; set; } // Y/N
+        public virtual string Prem
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(Prem))
+                {
+                    if (Prem.ToLower() == "n")
+                    {
+                        return "No";
+                    }
+                    if (Prem.ToLower() == "y")
+                    {
+                        return "Yes";
+                    }
+                }
+                return Prem;
+            }
+            set { Prem = value; }
+        } // Y/N
+        
 
         public virtual decimal PremiumAdjustedGiftAmount { get; set; }
 
@@ -38,7 +57,25 @@ namespace GiftModels
 
         public virtual string GiftFeeExceptionName { get; set; }
 
-        public virtual string AfFee { get; set; } // Y/N
+        public virtual string AfFee
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(AfFee))
+                {
+                    if (AfFee.ToLower() == "n")
+                    {
+                        return "No";
+                    }
+                    if (AfFee.ToLower() == "y")
+                    {
+                        return "Yes";
+                    }
+                }
+                return AfFee;
+            }
+            set { AfFee = value; }
+        } // Y/N
 
         public virtual string BenefittingUnitCode { get; set; }
 
