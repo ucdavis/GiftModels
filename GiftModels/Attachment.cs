@@ -30,8 +30,7 @@ namespace GiftModels
         /// <summary>
         /// bytes
         /// </summary>
-        [Required]
-        public string Size { get; set; }
+        public long Size { get; set; }
 
         /// <summary>
         /// catch all notes, description, w/e
