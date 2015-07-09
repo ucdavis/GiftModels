@@ -14,6 +14,8 @@ namespace GiftModels
 
         public virtual string PrimaryDonor { get; set; }
 
+        public virtual string PrimaryDonorId { get; set; }
+
         public virtual decimal TotalAmount { get; set; }
 
         public virtual decimal TotalPremiumAmount { get; set; }
