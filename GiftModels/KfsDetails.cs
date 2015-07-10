@@ -76,7 +76,7 @@ namespace GiftModels
         /// <summary>
         /// The eight (8) character Organization Reference ID associated with the KFS transaction.
         /// </summary>
-        public string OrgReferenceId { get; set; }
+        public string OrgReferenceNum { get; set; }
 
         /// <summary>
         /// The date the associated KFS transaction posted to the general ledger.
