@@ -38,6 +38,8 @@
         public string Agency { get; set; }
         public string Purpose { get; set; }
 
+        public string PurposeDescription { get; set; }
+
         /// <summary>
         /// Catch all field
         /// </summary>
