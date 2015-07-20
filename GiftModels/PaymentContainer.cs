@@ -12,6 +12,8 @@ namespace GiftModels
         [Required]
         public string Type { get; set; }
 
+        public string TypeDescription { get; set; }
+
         public decimal Amount { get; set; }
         
         /// <summary>
