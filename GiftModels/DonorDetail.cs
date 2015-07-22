@@ -29,29 +29,14 @@ namespace GiftModels
                 {
                     result += LastName;
                 }
-                return result.Trim();
+
+                return string.IsNullOrWhiteSpace(result) ? ReportName : result.Trim();
             }
         }
 
         public string DisplayName
         {
-            get
-            {
-                var result = "";
-                if (!string.IsNullOrWhiteSpace(FirstName))
-                {
-                    result += FirstName + " ";
-                }
-                if (!string.IsNullOrWhiteSpace(LastName))
-                {
-                    result += LastName + " ";
-                }
-                if (!string.IsNullOrWhiteSpace(IdNumber))
-                {
-                    result += string.Format("({0})", IdNumber);
-                }
-                return result.Trim();
-            }
+            get { return string.Format("{0} ({1})", FullName, IdNumber); }
         }
 
         public bool IsJoint { get; set; }
