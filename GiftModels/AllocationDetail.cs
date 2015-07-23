@@ -29,6 +29,11 @@
         public string DepartmentCode { get; set; }
         public string SchoolCode { get; set; }
         public string DivisionCode { get; set; }
+
+        /// <summary>
+        /// The College (or School) who receives the 4% College/School gift fee.
+        /// </summary>
+        public string BenefittingUnitCode { get; set; }
         public string UcFundCode { get; set; }
 
         /// <summary>
