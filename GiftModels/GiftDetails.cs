@@ -26,7 +26,6 @@ namespace GiftModels
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
         [Required]
-        [MinLength(1)]
         public IList<AllocationContainer> Allocations { get; set; }
 
         public IList<Attachment> Attachments { get; set; } 
