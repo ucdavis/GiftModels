@@ -25,6 +25,7 @@ namespace GiftModels
 
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
+        [Required]
         public IList<AllocationContainer> Allocations { get; set; }
 
         public IList<Attachment> Attachments { get; set; } 
@@ -63,6 +64,7 @@ namespace GiftModels
         /// <summary>
         /// KFS Reference Key
         /// </summary>
+        [Required]
         public virtual string KfsKey { get; set; }
         #endregion
 
