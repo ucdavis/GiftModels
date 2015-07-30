@@ -1,7 +1,10 @@
-﻿namespace GiftModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GiftModels
 {
     public class AllocationDetail
     {
+        [Required]
         public string AllocationCode { get; set; }
         public string Account { get; set; }
         public string LongName { get; set; }
