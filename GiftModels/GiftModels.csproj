@@ -43,6 +43,7 @@
     <Compile Include="AllocationContainer.cs" />
     <Compile Include="AllocationDetail.cs" />
     <Compile Include="Attachment.cs" />
+    <Compile Include="Helpers\DataAnnotationsHelper.cs" />
     <Compile Include="KfsDetails.cs" />
     <Compile Include="GiftDetails.cs" />
     <Compile Include="DonorContainer.cs" />
