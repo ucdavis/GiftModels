@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using GiftModels.Helpers;
 
 namespace GiftModels
 {
@@ -25,6 +26,8 @@ namespace GiftModels
 
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
+        [Required]
+        [DataAnnotationsHelper.MinListLength(1)]
         public IList<AllocationContainer> Allocations { get; set; }
 
         public IList<Attachment> Attachments { get; set; } 
