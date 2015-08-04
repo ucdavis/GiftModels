@@ -27,6 +27,10 @@ namespace GiftModels.Helpers
 
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
+                // If it's null, we don't care for this check.
+                if (value == null)
+                    return ValidationResult.Success;
+
                 var collection = value as ICollection;
 
                 if (collection == null || collection.Count < _length)
