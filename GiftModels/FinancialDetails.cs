@@ -38,11 +38,11 @@ namespace GiftModels
             get
             {
                 string retval = null;
-                if (string.Equals(FundType, "CURRENT") && !(string.Equals(Purpose, "LOAN") || string.Equals(Purpose, "CAPITAL")))
+                if (string.Equals(FundType, "CURRENT", StringComparison.OrdinalIgnoreCase) && !(string.Equals(Purpose, "LOAN", StringComparison.OrdinalIgnoreCase) || string.Equals(Purpose, "CAPITAL", StringComparison.OrdinalIgnoreCase)))
                 {
                     retval =  ExpenseChart + "-" + ExpenseAccount;
                 }
-                else if (string.Equals(FundType, "QUASI") || string.Equals(FundType, "ENDOWMENT"))
+                else if (string.Equals(FundType, "QUASI", StringComparison.OrdinalIgnoreCase) || string.Equals(FundType, "ENDOWMENT", StringComparison.OrdinalIgnoreCase))
                 {
                     retval = ExpenseAccount;
                     if (ExpenseAccount.StartsWith("92") && ExpenseAccount.Length >= 7)
