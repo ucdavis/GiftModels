@@ -38,7 +38,7 @@ namespace GiftModels
             get
             {
                 string retval = null;
-                if ((string.Equals(FundType, "CURRENT") && !(string.Equals(Purpose, "LOAN") || string.Equals(Purpose, "CAPITAL"))))
+                if (string.Equals(FundType, "CURRENT") && !(string.Equals(Purpose, "LOAN") || string.Equals(Purpose, "CAPITAL")))
                 {
                     retval =  ExpenseChart + "-" + ExpenseAccount;
                 }
