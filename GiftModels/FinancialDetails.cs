@@ -32,7 +32,28 @@ namespace GiftModels
 
         public virtual string FundType { get; set; }
 
-        public virtual string FisAccount { get; set; }
+        public virtual string Purpose { get; set; }
+
+        public virtual string FisAccount {
+            get
+            {
+                string retval = null;
+                if (FundType.Equals("CURRENT") && !(Purpose.Equals("LOAN") || Purpose.Equals("CAPITAL")))
+                {
+                    retval =  ExpenseChart + "-" + ExpenseAccount;
+                }
+                else if (FundType.Equals("QUASI") || FundType.Equals("ENDOWMENT"))
+                {
+                    retval = ExpenseAccount;
+                    if (ExpenseAccount.StartsWith("92") && ExpenseAccount.Length >= 7)
+                    {
+                        retval = ExpenseAccount.Substring(2);
+                    }
+                }
+                // else if (FundType.Equals("CURRENT") && Purpose.Equals("LOAN"))) return null;
+                return retval;
+            } 
+        }
 
         public virtual string FisSubAccount { get; set; }
 
@@ -83,8 +104,5 @@ namespace GiftModels
         public virtual DateTime CreationDate { get; set; } //Great?
 
         public virtual DateTime UpdateDate { get; set; } // Great?
-
-
-
     }
 }
