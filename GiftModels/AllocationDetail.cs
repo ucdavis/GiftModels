@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GiftModels
 {
@@ -13,19 +14,11 @@ namespace GiftModels
             get
             {
                 var result = "";
-                if (!string.IsNullOrWhiteSpace(AllocationCode))
-                {
-                    result += AllocationCode + "/";
-                }
-                if (!string.IsNullOrWhiteSpace(Account))
-                {
-                    result += Account + " ";
-                }
-                if (!string.IsNullOrWhiteSpace(LongName))
-                {
-                    result += string.Format("({0})", LongName);
-                }
-                return result.Trim(' ', '/');
+                var allocationAndAccount = string.Format("{0}/{1}", AllocationCode, Account);
+                allocationAndAccount = allocationAndAccount.Trim(' ', '/');
+                result = string.IsNullOrWhiteSpace(LongName) ? allocationAndAccount : string.Format("{0} ({1})", allocationAndAccount, LongName);
+
+                return result.Trim(' ');
             }
         }
         public string FundName { get; set; }
