@@ -40,7 +40,7 @@ namespace GiftModels
                 string retval = null;
                 if (string.Equals(FundType, "CURRENT", StringComparison.OrdinalIgnoreCase) && !(string.Equals(Purpose, "LOAN", StringComparison.OrdinalIgnoreCase) || string.Equals(Purpose, "CAPITAL", StringComparison.OrdinalIgnoreCase)))
                 {
-                    if (!string.IsNullOrWhiteSpace(ExpenseChart) && !string.IsNullOrWhiteSpace(ExpenseChart))
+                    if (!string.IsNullOrWhiteSpace(ExpenseChart) && !string.IsNullOrWhiteSpace(ExpenseAccount))
                         retval =  ExpenseChart + "-" + ExpenseAccount;
                 }
                 else if (string.Equals(FundType, "QUASI", StringComparison.OrdinalIgnoreCase) || string.Equals(FundType, "ENDOWMENT", StringComparison.OrdinalIgnoreCase))
