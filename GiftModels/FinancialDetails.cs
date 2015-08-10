@@ -46,7 +46,7 @@ namespace GiftModels
                 else if (string.Equals(FundType, "QUASI", StringComparison.OrdinalIgnoreCase) || string.Equals(FundType, "ENDOWMENT", StringComparison.OrdinalIgnoreCase))
                 {
                     retval = ExpenseAccount;
-                    if (ExpenseAccount.StartsWith("92"))
+                    if (!string.IsNullOrWhiteSpace(retval) && retval.StartsWith("92"))
                     {
                         retval = ExpenseAccount.Substring(2);
                     }
