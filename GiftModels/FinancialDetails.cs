@@ -40,13 +40,15 @@ namespace GiftModels
                 string retval = null;
                 if (string.Equals(FundType, "CURRENT", StringComparison.OrdinalIgnoreCase) && !(string.Equals(Purpose, "LOAN", StringComparison.OrdinalIgnoreCase) || string.Equals(Purpose, "CAPITAL", StringComparison.OrdinalIgnoreCase)))
                 {
-                    retval =  ExpenseChart + "-" + ExpenseAccount;
+                    if (!string.IsNullOrWhiteSpace(ExpenseChart) && !string.IsNullOrWhiteSpace(ExpenseAccount))
+                        retval =  ExpenseChart + "-" + ExpenseAccount;
                 }
                 else if (string.Equals(FundType, "QUASI", StringComparison.OrdinalIgnoreCase) || string.Equals(FundType, "ENDOWMENT", StringComparison.OrdinalIgnoreCase))
                 {
                     retval = ExpenseAccount;
-                    if (ExpenseAccount.StartsWith("92") && ExpenseAccount.Length >= 7)
+                    if (!string.IsNullOrWhiteSpace(retval) && retval.StartsWith("92"))
                     {
+                        // Remove the "92"
                         retval = ExpenseAccount.Substring(2);
                     }
                 }
