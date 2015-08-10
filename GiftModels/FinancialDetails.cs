@@ -48,6 +48,7 @@ namespace GiftModels
                     retval = ExpenseAccount;
                     if (!string.IsNullOrWhiteSpace(retval) && retval.StartsWith("92"))
                     {
+                        // Remove the "92"
                         retval = ExpenseAccount.Substring(2);
                     }
                 }
