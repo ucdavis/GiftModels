@@ -42,7 +42,7 @@ namespace GiftModels
 
         public string PledgeId { get; set; }
 
-        [Range(0.01, 1000000000000)]
+        [Range(0.01, Double.MaxValue)]
         public decimal Amount { get; set; }
 
         public decimal CreditAmount { get; set; }
