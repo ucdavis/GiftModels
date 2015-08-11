@@ -41,7 +41,7 @@ namespace GiftModels
             {
                 if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_premiumChart))
+                if (string.IsNullOrWhiteSpace(_premiumChart) && Xcomment.Contains("-"))
                     return Xcomment.Substring(0, Xcomment.IndexOf('-'));
                 return _premiumChart;
             }
@@ -58,7 +58,7 @@ namespace GiftModels
             {
                 if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_premiumAccount))
+                if (string.IsNullOrWhiteSpace(_premiumAccount) && Xcomment.Contains("-"))
                     return Xcomment.Substring(Xcomment.IndexOf('-') + 1);
                 return _premiumAccount;
             }
