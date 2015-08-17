@@ -38,6 +38,8 @@ namespace GiftModels
 
         public string AppealCode { get; set; }
 
+        public string AfFee { get; set; }
+
         public string CampaignCode { get; set; }
 
         public string PledgeId { get; set; }
