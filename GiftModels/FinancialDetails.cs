@@ -63,7 +63,7 @@ namespace GiftModels
 
         public virtual string GiftFeeExceptionName { get; set; }
 
-        public virtual string AfFee { get; set; } // Y/N
+        public virtual bool HasAfFee { get; set; } // Y/N
 
         public virtual string BenefittingUnitCode { get; set; }
 
