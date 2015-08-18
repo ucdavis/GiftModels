@@ -38,7 +38,7 @@ namespace GiftModels
 
         public string AppealCode { get; set; }
 
-        public string AfFee { get; set; }
+        public bool HasAfFee { get; set; }
 
         public string CampaignCode { get; set; }
 
