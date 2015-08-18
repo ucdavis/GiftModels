@@ -54,6 +54,11 @@ namespace GiftModels
         [Required]
         public string GiftFeeType { get; set; }
 
+        /// <summary>
+        /// The number of premiums associated with the gift.
+        /// </summary>
+        public int NumPremiums { get; set; }
+
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
