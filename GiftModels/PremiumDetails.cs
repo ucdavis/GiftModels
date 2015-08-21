@@ -38,7 +38,7 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumChart))
-                    InitAccounDetails();
+                    InitAccountDetails();
 
                 return _premiumChart;
             }
@@ -57,7 +57,7 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
-                    InitAccounDetails();
+                    InitAccountDetails();
 
                 return _premiumAccount;
             }
@@ -76,7 +76,7 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumSubAccount) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
-                    InitAccounDetails();
+                    InitAccountDetails();
 
                 return _premiumSubAccount;
             }
@@ -91,7 +91,7 @@ namespace GiftModels
         /// <summary>
         /// Parse out the KFS chart, Account, and Sub-account (if present) from the XComment field. 
         /// </summary>
-        private void InitAccounDetails()
+        private void InitAccountDetails()
         {
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
             var result = System.Text.RegularExpressions.Regex.Match(Xcomment, sPattern);
