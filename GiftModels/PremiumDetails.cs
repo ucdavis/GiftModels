@@ -102,7 +102,7 @@ namespace GiftModels
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
             var result = System.Text.RegularExpressions.Regex.Match(Xcomment, sPattern);
 
-            if (result.Groups[1].Length > 0 && result.Groups[2].ToString().Length > 0)
+            if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
             {
                 _premiumChart = result.Groups[1].ToString();
 
