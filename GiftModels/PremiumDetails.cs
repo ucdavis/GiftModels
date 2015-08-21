@@ -38,7 +38,9 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumChart))
+                {
                     InitAccountDetails();
+                }
 
                 return _premiumChart;
             }
@@ -57,7 +59,9 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
+                {
                     InitAccountDetails();
+                }
 
                 return _premiumAccount;
             }
@@ -76,8 +80,10 @@ namespace GiftModels
                 if (string.IsNullOrWhiteSpace(_premiumSubAccount) && string.IsNullOrWhiteSpace(Xcomment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
+                {
                     InitAccountDetails();
-
+                }
+                    
                 return _premiumSubAccount;
             }
             set { _premiumSubAccount = value; }
