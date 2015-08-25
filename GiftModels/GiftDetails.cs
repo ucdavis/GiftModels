@@ -56,8 +56,15 @@ namespace GiftModels
 
         /// <summary>
         /// The number of premiums associated with the gift.
+        /// This value is pulled from PRIM_GIFT_PREMIUM_CNT field.
         /// </summary>
         public int NumPremiums { get; set; }
+
+        /// <summary>
+        /// The individual premiums associated with a gift.
+        /// These values are pulled from GIFT_PREMIUM table. 
+        /// </summary>
+        public IList<PremiumDetails> Premiums { get; set; }
 
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
