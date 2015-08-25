@@ -35,7 +35,7 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Xcomment))
+                if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Comment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumChart))
                 {
