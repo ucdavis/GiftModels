@@ -25,7 +25,7 @@ namespace GiftModels
         /// <summary>
         /// This is a free text comment line about this premium containing the KFS Chart and Account number separated by a dash, included in double square brackets, i.e. [[3-1234567(-sub_account)]].
         /// </summary>
-        public string Xcomment { get; set; }
+        public string Comment { get; set; }
 
         /// <summary>
         ///This is the KFS Chart number used to credit the back the premium amount. 
@@ -56,7 +56,7 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Xcomment))
+                if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Comment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
                 {
@@ -77,7 +77,7 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumSubAccount) && string.IsNullOrWhiteSpace(Xcomment))
+                if (string.IsNullOrWhiteSpace(_premiumSubAccount) && string.IsNullOrWhiteSpace(Comment))
                     return null;
                 if (string.IsNullOrWhiteSpace(_premiumAccount))
                 {
@@ -100,7 +100,7 @@ namespace GiftModels
         private void InitAccountDetails()
         {
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
-            var result = System.Text.RegularExpressions.Regex.Match(Xcomment, sPattern);
+            var result = System.Text.RegularExpressions.Regex.Match(Comment, sPattern);
 
             if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
             {
