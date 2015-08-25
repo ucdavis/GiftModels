@@ -16,6 +16,7 @@ namespace GiftModels
             AdditionalDonors = new List<DonorContainer>();
             Allocations = new List<AllocationContainer>();
             Attachments = new List<Attachment>();
+            Premiums = new List<PremiumDetails>();
         }
 
         public string Source { get; set; }
