@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace GiftModels
 {
@@ -31,6 +32,8 @@ namespace GiftModels
         ///This is the KFS Chart number used to credit the back the premium amount. 
         /// </summary>
         private string _premiumChart;
+        [Required]
+        [MinLength(1)]
         public string PremiumChart
         {
             get
@@ -51,7 +54,8 @@ namespace GiftModels
         ///This is the KFS Account number used to credit the back the premium amount. 
         /// </summary>
         private string _premiumAccount;
-
+        [Required]
+        [MinLength(7)]
         public string PremiumAccount
         {
             get
