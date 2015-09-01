@@ -8,6 +8,10 @@ namespace GiftModels
         [Required]
         public string AllocationCode { get; set; }
 
+        /// <summary>
+        /// The Allocation "Type", mostly "one blank space", but could also be
+        /// Grants ("GT"), Gift in Kind ("GIK"), Planned Giving ("PG"), Suspense Hold ("SPH"), etc.
+        /// </summary>
         public string AllocationType { get; set; }
 
         public string Account { get; set; }
