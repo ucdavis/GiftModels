@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace GiftModels
 {
@@ -34,14 +35,13 @@ namespace GiftModels
                     return null;
                 if (string.IsNullOrWhiteSpace(_commentOnly))
                 {
-                    InitAccountDetails();
-                    if (!string.IsNullOrWhiteSpace(_embeddedKfsAccountString))
+                    if (!string.IsNullOrWhiteSpace(PremiumChart))
                     {
-                        _commentOnly = Comment.Replace(_embeddedKfsAccountString, "");
+                        _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
                     }
                 }
 
-                return _commentOnly; 
+                return _commentOnly;
             }
             set { _commentOnly = value; }
         }
