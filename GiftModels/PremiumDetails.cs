@@ -22,6 +22,30 @@ namespace GiftModels
         /// </summary>
         public string SequenceNumber { get; set; }
 
+        private string _commentOnly;
+        /// <summary>
+        /// The free text comment line (see below) less the KFS Chart and Account number and double square brackets, i.e. [[3-1234567(-sub_account)]].
+        /// </summary>
+        public string CommentOnly
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_commentOnly) && string.IsNullOrWhiteSpace(Comment))
+                    return null;
+                if (string.IsNullOrWhiteSpace(_commentOnly))
+                {
+                    InitAccountDetails();
+                    if (!string.IsNullOrWhiteSpace(_embeddedKfsAccountString))
+                    {
+                        _commentOnly = Comment.Replace(_embeddedKfsAccountString, "");
+                    }
+                }
+
+                return _commentOnly; 
+            }
+            set { _commentOnly = value; }
+        }
+
         /// <summary>
         /// This is a free text comment line about this premium containing the KFS Chart and Account number separated by a dash, included in double square brackets, i.e. [[3-1234567(-sub_account)]].
         /// </summary>
@@ -94,6 +118,7 @@ namespace GiftModels
         /// </summary>
         public decimal PremiumAmount { get; set; }
 
+        private string _embeddedKfsAccountString;
         /// <summary>
         /// Parse out the KFS chart, Account, and Sub-account (if present) from the XComment field. 
         /// </summary>
@@ -101,6 +126,8 @@ namespace GiftModels
         {
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
             var result = System.Text.RegularExpressions.Regex.Match(Comment, sPattern);
+
+            _embeddedKfsAccountString = result.Groups[0].ToString();
 
             if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
             {
