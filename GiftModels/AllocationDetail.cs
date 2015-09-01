@@ -7,6 +7,9 @@ namespace GiftModels
     {
         [Required]
         public string AllocationCode { get; set; }
+
+        public string AllocationType { get; set; }
+
         public string Account { get; set; }
         public string LongName { get; set; }
         public string DisplayName
