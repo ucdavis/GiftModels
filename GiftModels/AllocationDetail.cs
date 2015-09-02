@@ -9,8 +9,11 @@ namespace GiftModels
         public string AllocationCode { get; set; }
 
         /// <summary>
-        /// The Allocation "Type", mostly "one blank space", but could also be
+        /// The Allocation "Type", is predominantly "one blank space", but could also be
         /// Grants ("GT"), Gift in Kind ("GIK"), Planned Giving ("PG"), Suspense Hold ("SPH"), etc.
+        /// We will use this field to help determine if a gift with particular Allocation attributes
+        /// should be processed. Basically this field must be blank for Regents current use,
+        /// Regents Endowment, and Regents Quasi (FFE). None of the other types listed above are allowed.
         /// </summary>
         public string AllocationType { get; set; }
 
