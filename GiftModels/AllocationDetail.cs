@@ -17,6 +17,13 @@ namespace GiftModels
         /// </summary>
         public string AllocationType { get; set; }
 
+        /// <summary>
+        /// Indicates whether an AllocationCode is Active.  Used to determine a gift's allocation's acceptance criteria.
+        /// We will use this field to help determine if a gift with particular Allocation attributes
+        /// should be processed. 
+        /// </summary>
+        public bool IsActiveAllocation { get; set; }
+
         public string Account { get; set; }
         public string LongName { get; set; }
         public string DisplayName
