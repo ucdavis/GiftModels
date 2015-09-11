@@ -35,7 +35,7 @@ namespace GiftModels
                     return null;
                 if (string.IsNullOrWhiteSpace(_commentOnly))
                 {
-                    if (!string.IsNullOrWhiteSpace(Chart))
+                    if (!string.IsNullOrWhiteSpace(Comment))
                     {
                         _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
                     }
