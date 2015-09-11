@@ -31,16 +31,22 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_commentOnly) && string.IsNullOrWhiteSpace(Comment))
+                if (string.IsNullOrWhiteSpace(Comment))  // Meaning we have nothing to work with so return null.
                     return null;
+
                 if (string.IsNullOrWhiteSpace(_commentOnly))
                 {
-                    if (!string.IsNullOrWhiteSpace(Comment))
+                    _commentOnly = Comment; // Set _commentOnly to Comment by default.
+
+                    // If the chart has been populated, then we also have an _embeddedKfsAccountString
+                    // Therefore, strip the _embeddedKfsAccountString out of the comment, trim and return the remainder: 
+                    if (!string.IsNullOrWhiteSpace(Chart))
                     {
                         _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
                     }
+                    // Otherwise just use the comment as the default.
                 }
-
+                
                 return _commentOnly;
             }
             set { _commentOnly = value; }
