@@ -1,71 +1,130 @@
 ﻿{
-    "primaryDonor": {
+  "primaryDonor": {
+    "detail": {
+      "IdNumber": "123456789",
+      "FirstName": "Bob",
+      "LastName": "Dobalina",
+      "IsJoint": false,
+      "SpouseName": " ",
+      "ReportName": "Dobalina, Bob K.",
+      "Email": null,
+      "Street1": "1234 Sesame Street",
+      "City": "Oakland",
+      "State": "CA",
+      "Zip": "94618"
+    },
+    "GiftAssociatedCode": "P"
+  },
+  "additionalDonors": [
+    {
       "detail": {
-        "IdNumber": "123456789",
-        "FirstName": "Bob",
-        "LastName": "Dobalina",
+        "IdNumber": "987654321",
+        "FirstName": "John",
+        "LastName": "Snow",
         "IsJoint": false,
         "SpouseName": " ",
-        "ReportName": "Dobalina, Bob K.",
+        "ReportName": "Snow, John",
         "Email": null,
-        "Street1": "1234 Sesame Street",
-        "City": "Oakland",
+        "Street1": "1 Wall Ave",
+        "City": "North",
         "State": "CA",
-        "Zip": "94618"
+        "Zip": "90210"
       },
-      "GiftAssociatedCode":  "P"
-    },
-    "additionalDonors": [
-      {
-        "detail": {
-          "IdNumber": "987654321",
-          "FirstName": "John",
-          "LastName": "Snow",
-          "IsJoint": false,
-          "SpouseName": " ",
-          "ReportName": "Snow, John",
-          "Email": null,
-          "Street1": "1 Wall Ave",
-          "City": "North",
-          "State": "CA",
-          "Zip": "90210"
-        },
-        "GiftAssociatedCode": "O"
+      "GiftAssociatedCode": "O"
+    }
+  ],
+  "payment": {
+    "type": "C",
+    "amount": 400
+  },
+  "allocations": [
+    {
+      "amount": 25,
+      "detail": {
+        "AllocationCode": "123010",
+        "Account": "123010",
+        "LongName": "O'Donnell Family Scholarship in Agricutural and Resource Economics",
+        "DisplayName": "123010/123010 (O'Donnell Family Scholarship in Agricutural and Resource Economics)",
+        "FundName": "ENDOWMENT",
+        "DeptartmentCode": "AARE",
+        "SchoolCode": "AAES",
+        "Agency": "F"
       }
-    ],
-    "payment": {
-      "type": "C",
-      "amount": 400
     },
-    "allocations": [
-      {
-        "amount": 25,
-        "detail": {
-          "AllocationCode": "123010",
-          "Account": "123010",
-          "LongName": "O'Donnell Family Scholarship in Agricutural and Resource Economics",
-          "DisplayName": "123010/123010 (O'Donnell Family Scholarship in Agricutural and Resource Economics)",
-          "FundName": "ENDOWMENT",
-          "DeptartmentCode": "AARE",
-          "SchoolCode": "AAES",
-          "Agency": "F"
-        }
-      },
-      {
-        "amount": 375,
-        "detail": {
-          "AllocationCode": "122028",
-          "Account": "122028",
-          "LongName": "Bill and Pat Williams Forage Research and Outreach Endowed Fund",
-          "DisplayName": "122028/122028 (Bill and Pat Williams Forage Research and Outreach Endowed Fund)",
-          "FundName": "ENDOWMENT",
-          "DeptartmentCode": "APSC",
-          "SchoolCode": "AAES",
-          "Agency": "F"
-        }
+    {
+      "amount": 375,
+      "detail": {
+        "AllocationCode": "122028",
+        "Account": "122028",
+        "LongName": "Bill and Pat Williams Forage Research and Outreach Endowed Fund",
+        "DisplayName": "122028/122028 (Bill and Pat Williams Forage Research and Outreach Endowed Fund)",
+        "FundName": "ENDOWMENT",
+        "DeptartmentCode": "APSC",
+        "SchoolCode": "AAES",
+        "Agency": "F"
       }
-    ],
-    "files": [
-      
-    ]
+    }
+  ],
+  "attachments": [
+    {
+      "receiptNumber": "0001853787",
+      "name": "00001-00001f.png",
+      "contentType": "image/png",
+      "fileType": "Coupon",
+      "uri": null,
+      "identifier": "ee0ae51a-aece-4517-a51c-11462707211e-00001-00001f.png",
+      "size": 10825,
+      "description": null
+    },
+    {
+      "receiptNumber": "0001853787",
+      "name": "00001-00001r.png",
+      "contentType": "image/png",
+      "fileType": "Coupon",
+      "uri": null,
+      "identifier": "26e7a582-2917-45e7-88ee-a2d679df0985-00001-00001r.png",
+      "size": 13253,
+      "description": null
+    },
+    {
+      "receiptNumber": "0001853787",
+      "name": "00001-00002f.png",
+      "contentType": "image/png",
+      "fileType": "Check",
+      "uri": null,
+      "identifier": "3ee70485-0f6e-43d9-b596-8124cf5455d8-00001-00002f.png",
+      "size": 36852,
+      "description": null
+    },
+    {
+      "receiptNumber": "0001853787",
+      "name": "00001-00002r.png",
+      "contentType": "image/png",
+      "fileType": "Check",
+      "uri": null,
+      "identifier": "c687ad03-15df-45eb-b17e-eefaaa09564e-00001-00002r.png",
+      "size": 1666,
+      "description": null
+    }
+  ],
+  "premiums": [
+    {
+      "recieptNumber": "0001853787",
+      "code": "GS",
+      "sequenceNumber": "1",
+      "comment": "Pants [[3-GOODS]]"
+    },
+    {
+      "recieptNumber": "0001853787",
+      "code": "PARK",
+      "sequenceNumber": "2",
+      "comment": ""
+    },
+    {
+      "recieptNumber": "0001853787",
+      "code": "WAH",
+      "sequenceNumber": "3",
+      "comment":  "[[3-GOODS]]"
+    }
+  ]
 }
