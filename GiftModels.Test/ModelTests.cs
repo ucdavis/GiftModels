@@ -17,5 +17,16 @@ namespace GiftModels.Test
             Assert.IsNotNull(giftdetail);
             Assert.AreEqual("123456789", giftdetail.PrimaryDonor.Detail.IdNumber);
         }
+
+        [TestMethod]
+        public void Serialize()
+        {
+            var giftdetail = JsonConvert.DeserializeObject<GiftDetails>(_content);
+
+            var result = JsonConvert.SerializeObject(giftdetail);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Length > 0);
+        }
     }
 }
