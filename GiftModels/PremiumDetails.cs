@@ -16,7 +16,7 @@ namespace GiftModels
         /// <summary>
         /// This code is validated against the tms_premium table (W3). It describes the specific premium received. 
         /// </summary>
-        public string PremiumCode { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         ///This is the sequence number for each unique premium row. 
@@ -35,10 +35,7 @@ namespace GiftModels
                     return null;
                 if (string.IsNullOrWhiteSpace(_commentOnly))
                 {
-                    if (!string.IsNullOrWhiteSpace(PremiumChart))
-                    {
-                        _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
-                    }
+                    InitAccountDetails();
                 }
 
                 return _commentOnly;
@@ -54,69 +51,69 @@ namespace GiftModels
         /// <summary>
         ///This is the KFS Chart number used to credit the back the premium amount. 
         /// </summary>
-        private string _premiumChart;
-        public string PremiumChart
+        private string _chart;
+        public string Chart
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumChart) && string.IsNullOrWhiteSpace(Comment))
+                if (string.IsNullOrWhiteSpace(_chart) && string.IsNullOrWhiteSpace(Comment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_premiumChart))
+                if (string.IsNullOrWhiteSpace(_chart))
                 {
                     InitAccountDetails();
                 }
 
-                return _premiumChart;
+                return _chart;
             }
-            set { _premiumChart = value; }
+            set { _chart = value; }
         }
 
         /// <summary>
         ///This is the KFS Account number used to credit the back the premium amount. 
         /// </summary>
-        private string _premiumAccount;
+        private string _account;
 
-        public string PremiumAccount
+        public string Account
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumAccount) && string.IsNullOrWhiteSpace(Comment))
+                if (string.IsNullOrWhiteSpace(_account) && string.IsNullOrWhiteSpace(Comment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_premiumAccount))
+                if (string.IsNullOrWhiteSpace(_account))
                 {
                     InitAccountDetails();
                 }
 
-                return _premiumAccount;
+                return _account;
             }
-            set { _premiumAccount = value; }
+            set { _account = value; }
         }
 
         /// <summary>
         ///This is the KFS Sub-account number used to credit the back the premium amount. 
         /// </summary>
-        private string _premiumSubAccount;
+        private string _subAccount;
 
-        public string PremiumSubAccount
+        public string SubAccount
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_premiumSubAccount) && string.IsNullOrWhiteSpace(Comment))
+                if (string.IsNullOrWhiteSpace(_subAccount) && string.IsNullOrWhiteSpace(Comment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_premiumAccount))
+                if (string.IsNullOrWhiteSpace(_account))
                 {
                     InitAccountDetails();
                 }
                     
-                return _premiumSubAccount;
+                return _subAccount;
             }
-            set { _premiumSubAccount = value; }
+            set { _subAccount = value; }
         }
 
         /// <summary>
         /// This field is defaulted from the tms_premium table (W3). It is the monetary value associated with this premium. This value is normally the same amount as the value in the tms_premium table. 
         /// </summary>
-        public decimal PremiumAmount { get; set; }
+        public decimal Amount { get; set; }
 
         private string _embeddedKfsAccountString;
         /// <summary>
@@ -127,21 +124,25 @@ namespace GiftModels
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
             var result = System.Text.RegularExpressions.Regex.Match(Comment, sPattern);
 
+            // entire account info
             _embeddedKfsAccountString = result.Groups[0].ToString();
 
             if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
             {
-                _premiumChart = result.Groups[1].ToString();
+                _chart = result.Groups[1].ToString();
 
-                _premiumAccount = result.Groups[2].ToString();
+                _account = result.Groups[2].ToString();
 
-                _premiumSubAccount = result.Groups[3].ToString();
+                _subAccount = result.Groups[3].ToString();
 
-                if (string.IsNullOrWhiteSpace(_premiumSubAccount))
+                if (string.IsNullOrWhiteSpace(_subAccount))
                 {
-                    _premiumSubAccount = "-----";
+                    _subAccount = "-----";
                 }
             }
+
+            // left over after account info removed
+            _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
         }
     }
 }
