@@ -31,13 +31,14 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(_commentOnly) && string.IsNullOrWhiteSpace(Comment))
+                if (string.IsNullOrWhiteSpace(Comment))  // Meaning we have nothing to work with so return null.
                     return null;
+
                 if (string.IsNullOrWhiteSpace(_commentOnly))
                 {
                     InitAccountDetails();
                 }
-
+                
                 return _commentOnly;
             }
             set { _commentOnly = value; }
