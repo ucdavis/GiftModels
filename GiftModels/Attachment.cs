@@ -36,5 +36,10 @@ namespace GiftModels
         /// catch all notes, description, w/e
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Whether or not an attachment is active, i.e., visible
+        /// </summary>
+        public bool IsActive { get; set; }
     }
 }
