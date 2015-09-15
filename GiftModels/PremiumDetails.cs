@@ -143,7 +143,7 @@ namespace GiftModels
             }
 
             // left over after account info removed
-            _commentOnly = Comment.Replace(_embeddedKfsAccountString, "").Trim();
+            _commentOnly = string.IsNullOrEmpty(_embeddedKfsAccountString) ? Comment : Comment.Replace(_embeddedKfsAccountString, "").Trim();
         }
     }
 }
