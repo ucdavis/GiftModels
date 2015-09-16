@@ -101,7 +101,7 @@ namespace GiftModels
             {
                 if (string.IsNullOrWhiteSpace(_subAccount) && string.IsNullOrWhiteSpace(Comment))
                     return null;
-                if (string.IsNullOrWhiteSpace(_account))
+                if (string.IsNullOrWhiteSpace(_subAccount))
                 {
                     InitAccountDetails();
                 }
