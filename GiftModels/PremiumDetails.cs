@@ -41,7 +41,6 @@ namespace GiftModels
                 
                 return _commentOnly;
             }
-            set { _commentOnly = value; }
         }
 
         /// <summary>
@@ -66,7 +65,6 @@ namespace GiftModels
 
                 return _chart;
             }
-            set { _chart = value; }
         }
 
         /// <summary>
@@ -87,7 +85,6 @@ namespace GiftModels
 
                 return _account;
             }
-            set { _account = value; }
         }
 
         /// <summary>
@@ -108,7 +105,6 @@ namespace GiftModels
                     
                 return _subAccount;
             }
-            set { _subAccount = value; }
         }
 
         /// <summary>
