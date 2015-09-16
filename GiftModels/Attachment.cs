@@ -5,6 +5,11 @@ namespace GiftModels
 {
     public class Attachment
     {
+        public Attachment()
+        {
+            IsActive = true;    
+        }
+        
         [Required]
         public string Name { get; set; }
 
