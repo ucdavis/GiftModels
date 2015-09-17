@@ -156,7 +156,7 @@ namespace GiftModels
                     sb.Append(' '); // Add a space after each segment.
                 }
                 // Lastly, remove the last, and final trailing space that was added above:
-                _commentOnly = sb.Remove(sb.Length - 1, 1).ToString();
+                _commentOnly = sb.ToString().Trim();
             }
         }
     }
