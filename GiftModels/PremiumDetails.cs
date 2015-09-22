@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Text;
 
 namespace GiftModels
 {
@@ -138,8 +138,26 @@ namespace GiftModels
                 }
             }
 
-            // left over after account info removed
-            _commentOnly = string.IsNullOrEmpty(_embeddedKfsAccountString) ? Comment : Comment.Replace(_embeddedKfsAccountString, "").Trim();
+            //Sample: Jacket[[3-WINKLER]]Aggies
+            _commentOnly = Comment;  // Set the _commentOnly to the same value as the Comment by default:
+            
+            // Check if there's embedded KFS Account details in the comment, and remove it from the remaining comments:
+            if (!string.IsNullOrEmpty(_embeddedKfsAccountString)) //, i.e., [[3-WINKLER]]
+            {
+                // Get the segments before and after the KFS Account details as applicable:
+                var segments = Comment.Split(new string[] {_embeddedKfsAccountString}, StringSplitOptions.RemoveEmptyEntries);
+                // , i.e., [Jacket, Aggies]
+                // But wait.  There may be spaces before or after each segment.  We'll need to remove these, 
+                // but add a space between segments as applicable:
+                var sb = new StringBuilder();
+                foreach (var segment in segments)
+                {
+                    sb.Append(segment.Trim()); // Remove any leading or trailing whitespace for each segment.
+                    sb.Append(' '); // Add a space after each segment.
+                }
+                // Lastly, remove the last, and final trailing space that was added above:
+                _commentOnly = sb.ToString().Trim();
+            }
         }
     }
 }
