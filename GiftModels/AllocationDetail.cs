@@ -78,7 +78,7 @@ namespace GiftModels
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(EndowmentPoolCode) && EndowmentPoolCode.Equals("1"))
+                if (string.Equals(EndowmentPoolCode, ("1")))
                     return true;
                 
                 return false;
@@ -92,7 +92,7 @@ namespace GiftModels
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(EndowmentPoolCode) && EndowmentPoolCode.Equals("2"))
+                if (string.Equals(EndowmentPoolCode, ("2")))
                     return true;
 
                 return false;
