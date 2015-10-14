@@ -78,10 +78,7 @@ namespace GiftModels
         {
             get
             {
-                if (string.Equals(EndowmentPoolCode, ("1")))
-                    return true;
-                
-                return false;
+                return string.Equals(EndowmentPoolCode, ("1"));
             }
         }
 
@@ -92,10 +89,7 @@ namespace GiftModels
         {
             get
             {
-                if (string.Equals(EndowmentPoolCode, ("2")))
-                    return true;
-
-                return false;
+                return string.Equals(EndowmentPoolCode, ("2"));
             }
         }
 
