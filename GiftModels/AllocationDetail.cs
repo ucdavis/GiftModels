@@ -63,6 +63,36 @@ namespace GiftModels
         /// </summary>
         public string ExtraReference { get; set; }
 
+        /// <summary>
+        /// Intended to be used for Foundation Endowments and Quasi allocations in order to determine whether 
+        /// gift is to be funded to Short Term Investment Pool (STIP) or General Endowment Pool (GEP).
+        /// 1: STIP (Short Term Investment Pool);
+        /// 2: GEP (General Endowment Pool)
+        /// </summary>
+        public string EndowmentPoolCode { get; set; }
+
+        /// <summary>
+        /// Returns true is an allocation is funded to the Short Term Investment Pool (STIP); false otherwise.
+        /// </summary>
+        public bool IsShortTermInvestmentPool
+        {
+            get
+            {
+                return string.Equals(EndowmentPoolCode, ("1"));
+            }
+        }
+
+        /// <summary>
+        /// Returns true is an allocation is funded to the General Endowment Pool (GEP); false otherwise.
+        /// </summary>
+        public bool IsGeneralEndowmentPool
+        {
+            get
+            {
+                return string.Equals(EndowmentPoolCode, ("2"));
+            }
+        }
+
         #region Kfs Properties
         public string KfsAccount { get; set; }
         #endregion
