@@ -50,6 +50,11 @@ namespace GiftModels
         public string Account { get; set; }
 
         /// <summary>
+        /// The KFS Account Name associated with the KFS transaction.
+        /// </summary>
+        public string AccountName { get; set; }
+
+        /// <summary>
         /// The KFS Balance Type Code associated with the KFS transaction:  
         /// A "CB" indicates that the transaction was provided on a GLCB scrubber document; 
         /// A "AC" indicates that the transaction was provided on a GLJV scrubber document.
