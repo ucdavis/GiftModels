@@ -20,6 +20,9 @@ namespace GiftModels
 
         public virtual decimal TotalPremiumAmount { get; set; }
 
+        //TODO: This has yet to be implemented on the GivingSrvice end. Ultimately the NetGiftAmount will be PremiumAdjustedGiftAmount - TotalGiftFeeAmount.
+        public virtual decimal TotalGiftFeeAmount { get; set; }
+
         public virtual string Prem { get; set; } // Y/N
 
         public virtual decimal PremiumAdjustedGiftAmount { get; set; }
@@ -122,6 +125,28 @@ namespace GiftModels
                     default:
                         return null;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Returns true is an allocation is funded to the Short Term Investment Pool (STIP); false otherwise.
+        /// </summary>
+        public virtual bool IsShortTermInvestmentPool
+        {
+            get
+            {
+                return string.Equals(EndowmentPoolCode, ("1"));
+            }
+        }
+
+        /// <summary>
+        /// Returns true is an allocation is funded to the General Endowment Pool (GEP); false otherwise.
+        /// </summary>
+        public virtual bool IsGeneralEndowmentPool
+        {
+            get
+            {
+                return string.Equals(EndowmentPoolCode, ("2"));
             }
         }
     }
