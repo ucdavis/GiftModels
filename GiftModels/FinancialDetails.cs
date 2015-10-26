@@ -106,5 +106,23 @@ namespace GiftModels
         public virtual DateTime CreationDate { get; set; } //Great?
 
         public virtual DateTime UpdateDate { get; set; } // Great?
+
+        public virtual string EndowmentPoolCode { get; set; }
+
+        public virtual string EndowmentPool
+        {
+            get
+            {
+                switch (EndowmentPoolCode)
+                {
+                    case "1":
+                        return "STIP";
+                    case "2":
+                        return "GEP";
+                    default:
+                        return null;
+                }
+            }
+        }
     }
 }
