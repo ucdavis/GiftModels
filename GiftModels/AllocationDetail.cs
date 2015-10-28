@@ -75,9 +75,15 @@ namespace GiftModels
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(EndowmentPoolCode)) return string.Empty;
-
-                return string.Equals(EndowmentPoolCode, "1", StringComparison.Ordinal) ? "STIP" : "GEP";
+                switch (EndowmentPoolCode)
+                {
+                    case "1":
+                        return "STIP";
+                    case "2":
+                        return "GEP";
+                    default:
+                        return string.Empty;
+                }
             }
         }
 
