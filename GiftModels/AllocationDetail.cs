@@ -71,6 +71,16 @@ namespace GiftModels
         /// </summary>
         public string EndowmentPoolCode { get; set; }
 
+        public string EndowmentPool
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(EndowmentPoolCode)) return string.Empty;
+
+                return string.Equals(EndowmentPoolCode, "1", StringComparison.Ordinal) ? "STIP" : "GEP";
+            }
+        }
+
         /// <summary>
         /// Returns true is an allocation is funded to the Short Term Investment Pool (STIP); false otherwise.
         /// </summary>
