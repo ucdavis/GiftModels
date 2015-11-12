@@ -70,6 +70,9 @@ namespace GiftModels
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
+        
+        public DateTime RecordDate { get; set; }
+
         #endregion
 
         #region Kfs Properties
