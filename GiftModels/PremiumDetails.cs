@@ -9,6 +9,11 @@ namespace GiftModels
     public class PremiumDetails
     {
         /// <summary>
+        /// Indicates if the donor has refused the premium
+        /// </summary>
+        public bool Declined { get; set; }
+
+        /// <summary>
         ///  This is the receipt number of the primary gift to which this premium corresponds. This must be a valid entry in the gift and primary_gift tables. 
         /// </summary>
         public string ReceiptNumber { get; set; }
