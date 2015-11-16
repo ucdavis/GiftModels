@@ -23,6 +23,8 @@ namespace GiftModels
         /// </summary>
         public virtual DateTime? AuthorizedAt { get; set; }
 
+        public virtual DateTime? ReceivedDate { get; set; }
+
         #region Check Properties
         public string CheckNumber { get; set; }
         #endregion
