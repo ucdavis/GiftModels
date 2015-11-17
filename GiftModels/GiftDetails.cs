@@ -71,7 +71,7 @@ namespace GiftModels
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
         
-        public DateTime RecordDate { get; set; }
+        public DateTime? RecordDate { get; set; }
 
         #endregion
 
