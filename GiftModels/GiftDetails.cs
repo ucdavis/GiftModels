@@ -43,8 +43,6 @@ namespace GiftModels
 
         public string CampaignCode { get; set; }
 
-        public string PledgeId { get; set; }
-
         [Range(0.01, Double.MaxValue)]
         public decimal Amount { get; set; }
 
