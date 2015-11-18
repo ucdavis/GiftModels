@@ -4,6 +4,8 @@ namespace GiftModels
     {
         public DonorDetail Detail { get; set; }
 
+        public Acknowledgement Acknowledgement { get; set; }
+
         public decimal Amount { get; set; }
 
         public decimal CreditAmount { get; set; }
@@ -16,5 +18,7 @@ namespace GiftModels
         /// O: Other
         /// </summary>
         public string GiftAssociatedCode { get; set; }
+
+        public string Anonymous { get; set; }
     }
 }

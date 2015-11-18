@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acknowledgement.cs" />
     <Compile Include="AllocationContainer.cs" />
     <Compile Include="AllocationDetail.cs" />
     <Compile Include="Attachment.cs" />
