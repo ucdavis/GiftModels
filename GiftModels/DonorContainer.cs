@@ -18,5 +18,7 @@ namespace GiftModels
         /// O: Other
         /// </summary>
         public string GiftAssociatedCode { get; set; }
+
+        public string Anonymous { get; set; }
     }
 }
