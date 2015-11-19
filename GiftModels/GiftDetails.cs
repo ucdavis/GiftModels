@@ -30,6 +30,13 @@ namespace GiftModels
         [Required]
         [DataAnnotationsHelper.MinListLength(1)]
         public IList<AllocationContainer> Allocations { get; set; }
+        
+        public AllocationDetail PrimaryAllocation
+        {
+            get { return Allocations.Count > 0 ? Allocations[0].Detail : null; }
+        }
+
+        public IList<Distribution> Distributions { get; set; }
 
         public IList<Attachment> Attachments { get; set; } 
 
