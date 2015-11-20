@@ -4,15 +4,6 @@
     {
         public decimal Amount { get; set; }
 
-        /// <summary>
-        /// Valid Values: Null/Empty, Existing, New, NewWithPayment
-        /// </summary>
-        public string TransactionType { get; set; }
-
-        public string PledgeNumber { get; set; }
-
-        public string PledgeType { get; set; }
-
         public AllocationDetail Detail { get; set; }
     }
 }

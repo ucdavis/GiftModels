@@ -44,6 +44,7 @@
     <Compile Include="AllocationContainer.cs" />
     <Compile Include="AllocationDetail.cs" />
     <Compile Include="Attachment.cs" />
+    <Compile Include="Distribution.cs" />
     <Compile Include="Helpers\DataAnnotationsHelper.cs" />
     <Compile Include="KfsDetails.cs" />
     <Compile Include="GiftDetails.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="DonorDetail.cs" />
     <Compile Include="FinancialDetails.cs" />
     <Compile Include="PaymentContainer.cs" />
+    <Compile Include="Pledge.cs" />
     <Compile Include="PremiumDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
