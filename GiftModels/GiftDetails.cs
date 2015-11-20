@@ -31,7 +31,7 @@ namespace GiftModels
         [DataAnnotationsHelper.MinListLength(1)]
         public IList<AllocationContainer> Allocations { get; set; }
         
-        public AllocationDetail PrimaryAllocation
+        public AllocationDetail Allocation
         {
             get { return Allocations.Count > 0 ? Allocations[0].Detail : null; }
         }
