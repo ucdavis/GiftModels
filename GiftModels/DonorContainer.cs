@@ -4,6 +4,8 @@ namespace GiftModels
     {
         public DonorDetail Detail { get; set; }
 
+        public Affiliate Affiliate { get; set; }
+
         public Acknowledgement Acknowledgement { get; set; }
 
         public decimal Amount { get; set; }
@@ -21,6 +23,5 @@ namespace GiftModels
 
         public string Anonymous { get; set; }
 
-        public bool IsPet { get; set; }
     }
 }
