@@ -20,5 +20,7 @@ namespace GiftModels
         public string GiftAssociatedCode { get; set; }
 
         public string Anonymous { get; set; }
+
+        public bool IsPet { get; set; }
     }
 }
