@@ -82,5 +82,22 @@ namespace GiftModels
         public string AppraisalDate { get; set; }
         public string CamsNumber { get; set; }
         #endregion
+
+        #region Wire Transfer Properties
+
+        /// <summary>
+        /// Wire Transfer Number
+        /// </summary>
+        public string WireTransferNumber { get; set; }
+
+        #endregion
+
+        #region CR Doc Transfer Properties (Cash Receipt Document)
+
+        public string CashReceiptNumber { get; set; }
+        public string KfsAccountNumber { get; set; }
+
+        #endregion
+
     }
 }
