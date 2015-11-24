@@ -18,6 +18,8 @@ namespace GiftModels
         
         public string Comment { get; set; }
 
+        public string Description { get; set; }
+
         /// <summary>
         /// Authorization or Acceptance Datetime
         /// </summary>

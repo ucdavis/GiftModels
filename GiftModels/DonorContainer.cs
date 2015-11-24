@@ -4,6 +4,8 @@ namespace GiftModels
     {
         public DonorDetail Detail { get; set; }
 
+        public Affiliate Affiliate { get; set; }
+
         public Acknowledgement Acknowledgement { get; set; }
 
         public decimal Amount { get; set; }
@@ -20,5 +22,6 @@ namespace GiftModels
         public string GiftAssociatedCode { get; set; }
 
         public string Anonymous { get; set; }
+
     }
 }
