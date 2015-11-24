@@ -41,6 +41,7 @@ namespace GiftModels
 
         public bool IsJoint { get; set; }
         public string SpouseName { get; set; }
+        public string SpouseIdNumber { get; set; }
         public string Email { get; set; }
         public string EmailHash
         {
