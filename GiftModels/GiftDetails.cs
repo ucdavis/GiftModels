@@ -57,6 +57,8 @@ namespace GiftModels
 
         public bool IsRecurring { get; set; }
 
+        public string PledgeId { get; set; }
+
         [Required]
         public string GiftFeeType { get; set; }
 
