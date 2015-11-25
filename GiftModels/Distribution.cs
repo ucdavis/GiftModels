@@ -14,5 +14,7 @@ namespace GiftModels
         public Pledge Pledge { get; set; }
 
         public decimal Amount { get; set; }
+
+        public string GiftFeeType { get; set; }
     }
 }
