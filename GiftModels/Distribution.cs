@@ -2,6 +2,8 @@ namespace GiftModels
 {
     public class Distribution
     {
+        public string Id { get; set; }
+
         /// <summary>
         /// Valid Values: Null/Empty, Existing, New, NewWithPayment
         /// </summary>

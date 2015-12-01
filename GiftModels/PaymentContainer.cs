@@ -18,6 +18,8 @@ namespace GiftModels
         
         public string Comment { get; set; }
 
+        public string Description { get; set; }
+
         /// <summary>
         /// Authorization or Acceptance Datetime
         /// </summary>
@@ -79,6 +81,7 @@ namespace GiftModels
 
         #region Physical Properties
         public string Appriaser { get; set; }
+        public decimal AppraisalAmount { get; set; }
         public string AppraisalDate { get; set; }
         public string CamsNumber { get; set; }
         #endregion
