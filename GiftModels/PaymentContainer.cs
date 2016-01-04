@@ -102,5 +102,12 @@ namespace GiftModels
 
         #endregion
 
+        #region Gift In Kind Properties
+
+        public string GiftInKindTypeCode { get; set; }
+        public string GiftInKindDescription { get; set; }
+
+        #endregion
+
     }
 }
