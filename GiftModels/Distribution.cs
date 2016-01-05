@@ -15,6 +15,14 @@ namespace GiftModels
 
         public decimal Amount { get; set; }
 
+        /// <summary>
+        /// Gift Fee Type Description
+        /// </summary>
         public string GiftFeeType { get; set; }
+
+        /// <summary>
+        /// Gift Fee Type Lookup Code
+        /// </summary>
+        public string GiftFeeTypeCode { get; set; }
     }
 }
