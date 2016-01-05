@@ -52,8 +52,15 @@ namespace GiftModels
 
         public string PledgeId { get; set; }
 
-        [Required]
+        /// <summary>
+        /// Gift Fee Type Description
+        /// </summary>
         public string GiftFeeType { get; set; }
+
+        /// <summary>
+        /// Gift Fee Type Lookup Code
+        /// </summary>
+        public string GiftFeeTypeCode { get; set; }
 
         /// <summary>
         /// The number of premiums associated with the gift.
