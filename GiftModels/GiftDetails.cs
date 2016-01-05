@@ -14,7 +14,7 @@ namespace GiftModels
         {
             PrimaryDonor = new DonorContainer();
             AdditionalDonors = new List<DonorContainer>();
-            Allocations = new List<AllocationContainer>();
+            Distributions = new List<Distribution>();
             Attachments = new List<Attachment>();
             Premiums = new List<PremiumDetails>();
         }
@@ -27,14 +27,7 @@ namespace GiftModels
 
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
-        [Required]
-        [DataAnnotationsHelper.MinListLength(1)]
-        public IList<AllocationContainer> Allocations { get; set; }
-        
-        public AllocationDetail Allocation
-        {
-            get { return Allocations.Count > 0 ? Allocations[0].Detail : null; }
-        }
+        public AllocationDetail Allocation { get; set; }
 
         public IList<Distribution> Distributions { get; set; }
 
@@ -59,8 +52,15 @@ namespace GiftModels
 
         public string PledgeId { get; set; }
 
-        [Required]
+        /// <summary>
+        /// Gift Fee Type Description
+        /// </summary>
         public string GiftFeeType { get; set; }
+
+        /// <summary>
+        /// Gift Fee Type Lookup Code
+        /// </summary>
+        public string GiftFeeTypeCode { get; set; }
 
         /// <summary>
         /// The number of premiums associated with the gift.
