@@ -27,14 +27,7 @@ namespace GiftModels
 
         public IList<DonorContainer> AdditionalDonors { get; set; }
 
-        [Required]
-        [DataAnnotationsHelper.MinListLength(1)]
-        public IList<AllocationContainer> Allocations { get; set; }
-        
-        public AllocationDetail Allocation
-        {
-            get { return Allocations.Count > 0 ? Allocations[0].Detail : null; }
-        }
+        public AllocationDetail Allocation { get; set; }
 
         public IList<Distribution> Distributions { get; set; }
 
