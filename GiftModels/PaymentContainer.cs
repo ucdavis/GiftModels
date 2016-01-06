@@ -82,7 +82,7 @@ namespace GiftModels
         #region Physical Properties
         public string Appriaser { get; set; }
         public decimal AppraisalAmount { get; set; }
-        public DateTime AppraisalDate { get; set; }
+        public DateTime? AppraisalDate { get; set; }
         public string CamsNumber { get; set; }
         #endregion
 
