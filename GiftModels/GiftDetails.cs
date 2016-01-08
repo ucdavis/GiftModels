@@ -96,7 +96,7 @@ namespace GiftModels
         #endregion
 
         #region GREAT Properties
-        public Guid? GreatId { get; set; }
+        public int? GreatId { get; set; }
         #endregion
     }
 }
