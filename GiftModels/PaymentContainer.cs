@@ -74,7 +74,7 @@ namespace GiftModels
         #region Insurance Properties
         public string InsuranceVendor { get; set; }
         public string InsuranceCoverage { get; set; }
-        public string InsuranceDeductable { get; set; }
+        public string InsuranceDeductible { get; set; }
         public string InsurancePolicyNumber { get; set; }
         public string InsurancePolicyType { get; set; }
         #endregion
