@@ -68,21 +68,21 @@ namespace GiftModels
         #region Securities Properties
 
         public string SecurityName { get; set; }
-        public string SecurityCount { get; set; }
+        public double SecurityCount { get; set; }
         #endregion
 
         #region Insurance Properties
         public string InsuranceVendor { get; set; }
         public string InsuranceCoverage { get; set; }
-        public string InsuranceDeductible { get; set; }
+        public decimal InsuranceDeductible { get; set; }
         public string InsurancePolicyNumber { get; set; }
         public string InsurancePolicyType { get; set; }
         #endregion
 
         #region Physical Properties
-        public string Appriaser { get; set; }
+        public string Appraiser { get; set; }
         public decimal AppraisalAmount { get; set; }
-        public string AppraisalDate { get; set; }
+        public DateTime? AppraisalDate { get; set; }
         public string CamsNumber { get; set; }
         #endregion
 
