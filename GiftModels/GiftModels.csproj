@@ -54,6 +54,7 @@
     <Compile Include="Pledge.cs" />
     <Compile Include="PremiumDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affiliate.cs" />
