@@ -2,6 +2,11 @@ namespace GiftModels
 {
     public class DonorContainer
     {
+        /// <summary>
+        /// Differentiate associates, pets, emtpy acknowledgements, etc
+        /// </summary>
+        public string DonorType { get; set; }
+
         public DonorDetail Detail { get; set; }
 
         public Affiliate Affiliate { get; set; }
