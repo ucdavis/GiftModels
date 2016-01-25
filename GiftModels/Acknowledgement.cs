@@ -15,6 +15,32 @@ namespace GiftModels
         public string Name { get; set; }
 
         /// <summary>
+        /// Getter for address on single line
+        /// </summary>
+        public string Address {
+            
+            get
+            {
+                // Return null if the address is empty.
+                if (string.IsNullOrWhiteSpace(Address1))  
+                    return null;
+
+                var address = new StringBuilder();
+
+                address.Append(Address1);
+
+                if (!string.IsNullOrWhiteSpace(Address2))
+                {
+                    address.Append(", ");
+                    address.Append(Address2);
+                }
+
+                return address.ToString();                
+            }  
+      
+        }
+
+        /// <summary>
         /// Street address including suite/apt number
         /// </summary>
         public string Address1 { get; set; }
