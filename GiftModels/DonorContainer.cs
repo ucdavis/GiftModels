@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace GiftModels
 {
     public class DonorContainer
@@ -11,7 +13,7 @@ namespace GiftModels
 
         public Affiliate Affiliate { get; set; }
 
-        public Acknowledgement Acknowledgement { get; set; }
+        public List<Acknowledgement> Acknowledgements { get; set; }
 
         public decimal Amount { get; set; }
 
