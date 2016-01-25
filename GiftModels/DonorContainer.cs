@@ -13,7 +13,7 @@ namespace GiftModels
 
         public Affiliate Affiliate { get; set; }
 
-        public List<Acknowledgement> Acknowledgements { get; set; }
+        public Acknowledgement Acknowledgement { get; set; }
 
         public decimal Amount { get; set; }
 
