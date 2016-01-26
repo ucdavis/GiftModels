@@ -1,7 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace GiftModels
 {
     public class Distribution
     {
+        public Distribution()
+        {
+            Premiums = new List<PremiumDetails>();
+        }
+
         public string Id { get; set; }
 
         /// <summary>
@@ -12,6 +20,8 @@ namespace GiftModels
         public AllocationDetail AllocationDetail { get; set; }
 
         public Pledge Pledge { get; set; }
+
+        public IList<PremiumDetails> Premiums { get; set; }
 
         public decimal Amount { get; set; }
 
