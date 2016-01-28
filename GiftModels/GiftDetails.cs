@@ -97,6 +97,7 @@ namespace GiftModels
 
         #region GREAT Properties
         public int? GreatId { get; set; }
+        public string TeamCode { get; set; }
 
         public ReviewDetails ReviewDetails { get; set; }
         #endregion
