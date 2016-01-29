@@ -3,13 +3,13 @@
   <metadata>
     <id>GiftModels.JS</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>GiftModels JS</title>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/GiftModels</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <copyright>Copyright 2014</copyright>
+    <description>Models which can be used to represents gifts</description>
+    <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
     <file src="..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
