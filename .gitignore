@@ -108,6 +108,7 @@ DocProject/Help/html
 publish
 
 # Others
+artifacts
 [Bb]in
 [Oo]bj
 sql
