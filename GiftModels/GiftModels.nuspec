@@ -12,7 +12,7 @@
     <copyright>Copyright 2014</copyright>
   </metadata>
   <files>
-    <file src="..\..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
-    <file src="..\..\artifacts\GiftModels.dll" target="lib\net45" />
+    <file src="..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
+    <file src="..\artifacts\GiftModels.dll" target="lib\net45" />
   </files>
 </package>
