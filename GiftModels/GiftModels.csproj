@@ -61,7 +61,6 @@
   <ItemGroup>
     <Content Include="..\packages\JsModels.Net.Cmd.1.0.0.35\tools\jsmodels\jsmodels.cmd.exe">
       <Link>jsmodels.cmd.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="jsmodels-license.txt" />
   </ItemGroup>
@@ -70,7 +69,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(TargetDir)jsmodels.cmd.exe" -i "$(TargetDir)\GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)jsmodels.cmd.exe" -i "$(TargetDir)\GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
