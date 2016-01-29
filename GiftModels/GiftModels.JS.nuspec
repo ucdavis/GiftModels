@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>GiftModels</id>
+    <id>GiftModels.JS</id>
     <version>$version$</version>
-    <title>GiftModels</title>
+    <title>GiftModels JS</title>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/GiftModels</projectUrl>
@@ -12,6 +12,6 @@
     <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
-    <file src="..\artifacts\GiftModels.dll" target="lib\net45" />
+    <file src="..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
   </files>
 </package>
