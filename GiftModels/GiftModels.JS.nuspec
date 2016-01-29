@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>GiftModels</id>
+    <id>GiftModels.JS</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>Scott Kirkland</authors>
@@ -12,6 +12,6 @@
     <copyright>Copyright 2014</copyright>
   </metadata>
   <files>
-    <file src="..\artifacts\GiftModels.dll" target="lib\net45" />
+    <file src="..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
   </files>
 </package>
