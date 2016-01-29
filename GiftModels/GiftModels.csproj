@@ -58,6 +58,16 @@
   <ItemGroup>
     <Compile Include="Affiliate.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\JsModels.Net.Cmd.1.0.0.35\tools\jsmodels\jsmodels.cmd.exe">
+      <Link>jsmodels.cmd.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsmodels-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
