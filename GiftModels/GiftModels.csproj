@@ -69,6 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(TargetDir)jsmodels.cmd.exe" -i "$(TargetDir)\GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
