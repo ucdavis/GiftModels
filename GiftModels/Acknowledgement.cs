@@ -3,12 +3,7 @@
 namespace GiftModels
 {
     public class Acknowledgement
-    {
-        /// <summary>
-        /// The type of Acknowledgement (IMO, IHO)
-        /// </summary>
-        public string Type { get; set; }
-        
+    {        
         public string Salutation { get; set; }
 
         public string Title { get; set; }

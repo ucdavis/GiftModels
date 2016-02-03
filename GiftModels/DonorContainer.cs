@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 
 namespace GiftModels
 {
@@ -29,6 +30,52 @@ namespace GiftModels
         public string GiftAssociatedCode { get; set; }
 
         public string Anonymous { get; set; }
+
+        /// <summary>
+        /// Get Advance acknowledgement type
+        /// </summary>
+        /// <returns>Acknowledgement Type (e.g. IHO/IMO)</returns>
+        public string AcknowledgementType
+        {
+            get
+            {
+                var ret_val = string.Empty;
+
+                if (Acknowledgement != null)
+                {
+                    if (Affiliate != null && Affiliate.IsPet)
+                    {
+                        switch (Affiliate.AffiliateType)
+                        {
+                            case "A":
+                                ret_val = "IMO";
+                                break;
+                            case "H":
+                                ret_val = "IHO";
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (GiftAssociatedCode)
+                        {
+                            case "M":
+                                ret_val = "IMO";
+                                break;
+                            case "H":
+                                ret_val = "IHO";
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+
+                return ret_val;
+            }
+        }
 
     }
 }
