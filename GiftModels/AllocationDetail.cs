@@ -40,8 +40,10 @@ namespace GiftModels
         }
         public string FundName { get; set; }
         public string DepartmentCode { get; set; }
+        public string DepartmentName { get; set; }
         public string SubDepartmentCode { get; set; }
         public string SchoolCode { get; set; }
+        public string SchoolName { get; set; }
         public string DivisionCode { get; set; }
 
         /// <summary>
