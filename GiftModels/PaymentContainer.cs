@@ -21,6 +21,12 @@ namespace GiftModels
         public string Description { get; set; }
 
         /// <summary>
+        /// Method for sending, possibly courier or donor
+        /// </summary>
+        public string SentByCode { get; set; }
+
+        public DateTime? SentAt { get; set; }
+        /// <summary>
         /// Authorization or Acceptance Datetime
         /// </summary>
         public virtual DateTime? AuthorizedAt { get; set; }
