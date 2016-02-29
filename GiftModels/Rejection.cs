@@ -12,6 +12,6 @@ namespace GiftModels
         public string Actor { get; set; }
         public string ActorName { get; set; }
         public DateTime CreatedDate { get; set; }
-
+        public string ResolutionComment { get; set; }
     }
 }
