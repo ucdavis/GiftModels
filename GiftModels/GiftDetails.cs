@@ -53,6 +53,11 @@ namespace GiftModels
         public string PledgeId { get; set; }
 
         /// <summary>
+        /// Type of donation, P for Pledge, G for Gift
+        /// </summary>
+        public string DonationType { get; set; }
+
+        /// <summary>
         /// Gift Fee Type Description
         /// </summary>
         public string GiftFeeType { get; set; }
