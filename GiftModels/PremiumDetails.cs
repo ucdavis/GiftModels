@@ -8,8 +8,6 @@ namespace GiftModels
     /// </summary>
     public class PremiumDetails
     {
-        public string DistributionId { get; set; }
-
         /// <summary>
         /// Indicates if the donor has refused the premium
         /// </summary>
