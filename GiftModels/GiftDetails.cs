@@ -68,6 +68,11 @@ namespace GiftModels
         public string GiftFeeTypeCode { get; set; }
 
         /// <summary>
+        /// Sub Account for money movement
+        /// </summary>
+        public string SubAccount { get; set; }
+
+        /// <summary>
         /// The number of premiums associated with the gift.
         /// This value is pulled from PRIM_GIFT_PREMIUM_CNT field.
         /// </summary>

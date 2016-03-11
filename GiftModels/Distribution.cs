@@ -32,5 +32,10 @@ namespace GiftModels
         /// Gift Fee Type Lookup Code
         /// </summary>
         public string GiftFeeTypeCode { get; set; }
+
+        /// <summary>
+        /// Sub Account for money movement
+        /// </summary>
+        public string SubAccount { get; set; }
     }
 }
