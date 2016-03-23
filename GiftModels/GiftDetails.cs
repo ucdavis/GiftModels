@@ -52,6 +52,8 @@ namespace GiftModels
 
         public string PledgeId { get; set; }
 
+        public Pledge Pledge { get; set; }
+
         /// <summary>
         /// Type of donation, P for Pledge, G for Gift
         /// </summary>

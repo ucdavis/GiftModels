@@ -1,4 +1,6 @@
-﻿namespace GiftModels
+﻿using System;
+
+namespace GiftModels
 {
     public class Pledge
     {
@@ -8,5 +10,6 @@
         public decimal Amount { get; set; }
 
         public string Frequency { get; set; }
+        public DateTime? InitialPayDate { get; set; }
     }
 }
