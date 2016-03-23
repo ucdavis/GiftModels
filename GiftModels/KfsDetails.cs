@@ -50,6 +50,11 @@ namespace GiftModels
         public string Account { get; set; }
 
         /// <summary>
+        /// The KFS Sub-account Number associated with the KFS transaction.
+        /// </summary>
+        public string SubAccount { get; set; }
+
+        /// <summary>
         /// The KFS Account Name associated with the KFS transaction.
         /// </summary>
         public string AccountName { get; set; }
