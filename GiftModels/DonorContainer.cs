@@ -5,6 +5,11 @@ namespace GiftModels
 {
     public class DonorContainer
     {
+        public DonorContainer()
+        {
+            UpdateDictionary = new Dictionary<string, string>();
+        }
+
         /// <summary>
         /// Differentiate associates, pets, emtpy acknowledgements, etc
         /// </summary>
@@ -77,5 +82,6 @@ namespace GiftModels
             }
         }
 
+        public Dictionary<string, string> UpdateDictionary { get; set; } 
     }
 }
