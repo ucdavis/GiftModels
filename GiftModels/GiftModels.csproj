@@ -61,14 +61,15 @@
     <Compile Include="Affiliate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jsmodels-license.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="jsmodels-license.txt" />
+    <Content Include="jsmodels.cmd.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)jsmodels.cmd.exe" -i "$(TargetDir)\GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)jsmodels.cmd.exe" -i "$(TargetDir)GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
