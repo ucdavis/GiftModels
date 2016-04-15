@@ -100,7 +100,6 @@ namespace GiftModels
         /// <summary>
         /// KFS Reference Key
         /// </summary>
-        [Required]
         public virtual string KfsKey { get; set; }
         #endregion
 
