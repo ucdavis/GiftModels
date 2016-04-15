@@ -41,7 +41,6 @@ namespace GiftModels
 
         public string CampaignCode { get; set; }
 
-        [Range(0.01, Double.MaxValue)]
         public decimal Amount { get; set; }
 
         public decimal CreditAmount { get; set; }
