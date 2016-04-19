@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using GiftModels.Helpers;
 
 namespace GiftModels
 {
@@ -43,7 +41,6 @@ namespace GiftModels
 
         public string CampaignCode { get; set; }
 
-        [Range(0.01, Double.MaxValue)]
         public decimal Amount { get; set; }
 
         public decimal CreditAmount { get; set; }
@@ -103,7 +100,6 @@ namespace GiftModels
         /// <summary>
         /// KFS Reference Key
         /// </summary>
-        [Required]
         public virtual string KfsKey { get; set; }
         #endregion
 
