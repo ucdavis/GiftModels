@@ -10,7 +10,7 @@ namespace GiftModels
         public decimal Amount { get; set; }
 
         public string Frequency { get; set; }
-        public string FrequncyDetails { get; set; }
+        public string FrequencyDetails { get; set; }
         public DateTime? InitialPayDate { get; set; }
     }
 }
