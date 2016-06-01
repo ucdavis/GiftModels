@@ -25,7 +25,7 @@ namespace GiftModels
         /// <summary>
         /// First payment amount
         /// </summary>
-        public decimal InitialPayAmont { get; set; }
+        public decimal InitialPayAmount { get; set; }
 
         /// <summary>
         /// Total Count of frequency periods
