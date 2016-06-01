@@ -17,12 +17,15 @@ namespace GiftModels
 
         public string FrequencyDetails { get; set; }
 
+        /// <summary>
+        /// Date of first payment
+        /// </summary>
         public DateTime? InitialPayDate { get; set; }
 
         /// <summary>
-        /// Amount to be paid per frequency period
+        /// First payment amount
         /// </summary>
-        public decimal PeriodAmount { get; set; }
+        public decimal InitialPayAmont { get; set; }
 
         /// <summary>
         /// Total Count of frequency periods
