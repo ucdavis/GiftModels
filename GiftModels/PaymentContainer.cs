@@ -99,6 +99,11 @@ namespace GiftModels
         /// </summary>
         public string WireTransferNumber { get; set; }
 
+        /// <summary>
+        /// Wire Transfer Fee -- Fee paid to bank for this wire transfer
+        /// </summary>
+        public decimal WireTransferFee { get; set; }
+
         #endregion
 
         #region CR Doc Transfer Properties (Cash Receipt Document)
