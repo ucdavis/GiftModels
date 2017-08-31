@@ -79,6 +79,7 @@ namespace GiftModels
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+        public string Country { get; set; }
 
         public string Address
         {
@@ -100,6 +101,10 @@ namespace GiftModels
                 if (!string.IsNullOrWhiteSpace(Zip))
                 {
                     result += Zip;
+                }
+                if (!string.IsNullOrWhiteSpace(Country))
+                {
+                    result += ", " + Country;
                 }
                 return result.Trim(' ', ',');
             }
