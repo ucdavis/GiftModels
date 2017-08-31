@@ -42,7 +42,7 @@ namespace GiftModels
         public string Address1 { get; set; }
 
         /// <summary>
-        /// City, State, Zip
+        /// City, State, Zip, Country
         /// </summary>
         public string Address2 { get; set; }
         
