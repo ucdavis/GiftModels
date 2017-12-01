@@ -76,6 +76,7 @@ namespace GiftModels
         public string Phone { get; set; }
         public string Street1 { get; set; }
         public string Street2 { get; set; }
+        public string Street3 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
@@ -85,28 +86,42 @@ namespace GiftModels
         {
             get
             {
-                var result = "";
+                //fast return if no address
+                if (string.IsNullOrWhiteSpace(Street1)) return string.Empty;
+
+                //build address
+                var sb = new StringBuilder();
+
                 if (!string.IsNullOrWhiteSpace(Street1))
                 {
-                    result += Street1 + ", ";
+                    sb.Append(Street1);
+                }
+                if (!string.IsNullOrWhiteSpace(Street2))
+                {
+                    sb.Append(" ")
+                      .Append(Street2);
                 }
                 if (!string.IsNullOrWhiteSpace(City))
                 {
-                    result += City + ", ";
+                    sb.Append(", ")
+                      .Append(City);
                 }
                 if (!string.IsNullOrWhiteSpace(State))
                 {
-                    result += State + " ";
+                    sb.Append(" ")
+                      .Append(State);
                 }
                 if (!string.IsNullOrWhiteSpace(Zip))
                 {
-                    result += Zip;
+                    sb.Append(" ")
+                      .Append(Zip);
                 }
                 if (!string.IsNullOrWhiteSpace(Country))
                 {
-                    result += " " + Country;
+                    sb.Append(" ")
+                      .Append(Country);
                 }
-                return result.Trim(' ', ',');
+                return sb.ToString();
             }
         }
 
