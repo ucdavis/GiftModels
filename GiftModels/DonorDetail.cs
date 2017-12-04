@@ -108,7 +108,7 @@ namespace GiftModels
                 }
                 if (!string.IsNullOrWhiteSpace(State))
                 {
-                    sb.Append(" ")
+                    sb.Append(", ")
                       .Append(State);
                 }
                 if (!string.IsNullOrWhiteSpace(Zip))
