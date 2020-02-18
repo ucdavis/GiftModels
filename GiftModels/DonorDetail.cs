@@ -126,5 +126,7 @@ namespace GiftModels
         }
 
         public string Employer { get; set; }
+        public string AlertMessage { get; set; }
+        public string OpenPledgeMessage { get; set; }
     }
 }
