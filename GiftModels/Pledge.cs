@@ -31,5 +31,10 @@ namespace GiftModels
         /// Total Count of frequency periods
         /// </summary>
         public int PeriodCount { get; set; }
+
+        /// <summary>
+        /// Balance Remaining on pledge
+        /// </summary>
+        public decimal Balance { get; set; }
     }
 }
