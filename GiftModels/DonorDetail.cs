@@ -127,6 +127,7 @@ namespace GiftModels
 
         public string Employer { get; set; }
         public bool? HasAlert { get; set; }
+        public bool? IsDeceased { get; set; }
         public string ActivePledge { get; set; }
         public string EmployeeType { get; set; }
 
