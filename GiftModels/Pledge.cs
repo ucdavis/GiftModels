@@ -35,6 +35,6 @@ namespace GiftModels
         /// <summary>
         /// Balance Remaining on pledge
         /// </summary>
-        public decimal? Balance { get; set; }
+        public decimal Balance { get; set; }
     }
 }
