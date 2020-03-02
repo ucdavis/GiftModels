@@ -129,7 +129,7 @@ namespace GiftModels
         public bool HasAlert { get; set; }
         public bool IsDeceased { get; set; }
         public string ActivePledges { get; set; }
-        public bool HasEmploymentInfo { get; set; }
+        public bool HasRecordTypeOfInterest { get; set; }
 
     }
 }
