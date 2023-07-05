@@ -10,7 +10,7 @@ namespace GiftModels
     {
         /// <summary>
         /// Indicates if the donor has refused the premium
-        /// </summary>
+        /// </summary> 
         public bool Declined { get; set; }
 
         /// <summary>
