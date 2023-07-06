@@ -55,7 +55,6 @@ namespace GiftModels
         public string Comment { get; set; }
 
         public string AccountType { get; set; }
-        public string FinancialSegementString { get; set; }
 
         /// <summary>
         ///This is the KFS Chart number used to credit the back the premium amount. 
@@ -165,7 +164,7 @@ namespace GiftModels
             if (glResult.Success)
             {
                 AccountType = "GL";
-                FinancialSegementString = glResult.Groups[1].Value; //No [[]]
+                _account = glResult.Groups[1].Value; //No [[]]
 
                 SetCommentOnly(glResult.Groups[0].Value);
 
@@ -173,7 +172,7 @@ namespace GiftModels
             else if (ppmResult.Success)
             {
                 AccountType = "PPM";
-                FinancialSegementString = ppmResult.Groups[1].Value; //No [[]]
+                _account = ppmResult.Groups[1].Value; //No [[]]
 
                 SetCommentOnly(ppmResult.Groups[0].Value);
             }
