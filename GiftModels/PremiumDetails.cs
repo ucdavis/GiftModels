@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace GiftModels
 {
@@ -52,6 +53,9 @@ namespace GiftModels
         /// This is a free text comment line about this premium containing the KFS Chart and Account number separated by a dash, included in double square brackets, i.e. [[3-1234567(-sub_account)]].
         /// </summary>
         public string Comment { get; set; }
+
+        public string AccountType { get; set; }
+        public string FinancialSegementString { get; set; }
 
         /// <summary>
         ///This is the KFS Chart number used to credit the back the premium amount. 
@@ -118,51 +122,83 @@ namespace GiftModels
         public decimal Amount { get; set; }
 
         private string _embeddedKfsAccountString;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="theAccountInfo">the account info with the surrounding [[]]</param>
+        private void SetCommentOnly(string theAccountInfo)
+        {
+            // Get the segments before and after the KFS Account details as applicable:
+            var segments = Comment.Split(new string[] { theAccountInfo }, StringSplitOptions.RemoveEmptyEntries);
+            // , i.e., [Jacket, Aggies]
+            // But wait.  There may be spaces before or after each segment.  We'll need to remove these, 
+            // but add a space between segments as applicable:
+            var sb = new StringBuilder();
+            foreach (var segment in segments)
+            {
+                sb.Append(segment.Trim()); // Remove any leading or trailing whitespace for each segment.
+                sb.Append(' '); // Add a space after each segment.
+            }
+            // Lastly, remove the last, and final trailing space that was added above:
+            _commentOnly = sb.ToString().Trim();
+        }
+
+
         /// <summary>
         /// Parse out the KFS chart, Account, and Sub-account (if present) from the XComment field. 
         /// </summary>
         private void InitAccountDetails()
         {
+            //Sample: Jacket[[3-WINKLER]]Aggies
+            _commentOnly = Comment;  // Set the _commentOnly to the same value as the Comment by default:
+
+            Regex GlSegmentStringPattern = new Regex("\\[\\[([0-9]{3}[0-9AB]-[0-9A-Z]{5}-[0-9A-Z]{7}-[0-9A-Z]{6}-[0-9][0-9A-Z]-[0-9A-Z]{3}-[0-9A-Z]{10}-[0-9A-Z]{6}-0000-000000-000000)\\]\\]");
+            Regex PpmSegmentStringPattern = new Regex("\\[\\[([0-9A-Z]{10}-[0-9A-Z]{6}-[0-9A-Z]{7}-[0-9A-Z]{6}(-[0-9A-Z]{7}-[0-9A-Z]{5})?)\\]\\]");
+
+            var glResult = GlSegmentStringPattern.Match(Comment);
+            var ppmResult = PpmSegmentStringPattern.Match(Comment);
+
             const string sPattern = @"\[\[(\w)-(\w{5,7})-?(\w{5})?\]\]";
             var result = System.Text.RegularExpressions.Regex.Match(Comment, sPattern);
 
-            // entire account info
-            _embeddedKfsAccountString = result.Groups[0].ToString();
-
-            if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
+            if (glResult.Success)
             {
-                _chart = result.Groups[1].ToString();
+                AccountType = "GL";
+                FinancialSegementString = glResult.Groups[1].Value; //No [[]]
 
-                _account = result.Groups[2].ToString();
+                SetCommentOnly(glResult.Groups[0].Value);
 
-                _subAccount = result.Groups[3].ToString();
+            }
+            else if (ppmResult.Success)
+            {
+                AccountType = "PPM";
+                FinancialSegementString = ppmResult.Groups[1].Value; //No [[]]
 
-                if (string.IsNullOrWhiteSpace(_subAccount))
+                SetCommentOnly(ppmResult.Groups[0].Value);
+            }
+            else if(result.Success)
+            {
+                AccountType = "KFS";
+                // entire account info
+                _embeddedKfsAccountString = result.Groups[0].ToString();
+
+                if (result.Groups[1].ToString().Length > 0 && result.Groups[2].ToString().Length > 0)
                 {
-                    _subAccount = "-----";
+                    _chart = result.Groups[1].ToString();
+
+                    _account = result.Groups[2].ToString();
+
+                    _subAccount = result.Groups[3].ToString();
+
+                    if (string.IsNullOrWhiteSpace(_subAccount))
+                    {
+                        _subAccount = "-----";
+                    }
                 }
+                SetCommentOnly(_embeddedKfsAccountString);
             }
 
-            //Sample: Jacket[[3-WINKLER]]Aggies
-            _commentOnly = Comment;  // Set the _commentOnly to the same value as the Comment by default:
-            
-            // Check if there's embedded KFS Account details in the comment, and remove it from the remaining comments:
-            if (!string.IsNullOrEmpty(_embeddedKfsAccountString)) //, i.e., [[3-WINKLER]]
-            {
-                // Get the segments before and after the KFS Account details as applicable:
-                var segments = Comment.Split(new string[] {_embeddedKfsAccountString}, StringSplitOptions.RemoveEmptyEntries);
-                // , i.e., [Jacket, Aggies]
-                // But wait.  There may be spaces before or after each segment.  We'll need to remove these, 
-                // but add a space between segments as applicable:
-                var sb = new StringBuilder();
-                foreach (var segment in segments)
-                {
-                    sb.Append(segment.Trim()); // Remove any leading or trailing whitespace for each segment.
-                    sb.Append(' '); // Add a space after each segment.
-                }
-                // Lastly, remove the last, and final trailing space that was added above:
-                _commentOnly = sb.ToString().Trim();
-            }
         }
     }
 }
