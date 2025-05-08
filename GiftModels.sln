@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftModels", "GiftModels\GiftModels.csproj", "{BFC0C3D4-C8B6-4F22-9AA2-A33E422D5728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftModels", "GiftModels\GiftModels.csproj", "{BFC0C3D4-C8B6-4F22-9AA2-A33E422D5728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftModels.Test", "GiftModels.Test\GiftModels.Test.csproj", "{F59E1C99-FF07-4197-8B03-5D0071FE1871}"
 EndProject
