@@ -1,26 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <OutputPath>..\artifacts\</OutputPath>
-    <PostBuildEvent>"$(ProjectDir)jsmodels.cmd.exe" -i "$(TargetDir)GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
+    <!-- <OutputPath>..\artifacts\</OutputPath> -->
     <AssemblyTitle>GiftModels</AssemblyTitle>
     <Description>Models which can be used to represents gifts</Description>
     <Company>UC Davis</Company>
     <Product>GiftModels</Product>
-    <Copyright>Copyright ©  2014</Copyright>
-    <AssemblyVersion>1.2.0.*</AssemblyVersion>
+    <Copyright>Copyright © 2014</Copyright>
+    <AssemblyVersion>2.0.0.*</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="DataAnnotationsExtensions" Version="5.0.1.27" />
-    <PackageReference Include="JsModels.Net.Cmd" Version="1.0.0.38" />
+    <PackageReference Include="JsModels.Net" Version="2.0.38" PrivateAssets="none"
+      IncludeAssets="runtime; build" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jsmodels-license.txt" />
-    <Content Include="jsmodels.cmd.exe" />
+    <Content Include="jsmodels-license.txt" Pack="true" PackagePath="content/" />
   </ItemGroup>
+  <PropertyGroup>
+    <GenerateJsModels>true</GenerateJsModels>
+    <JsModelsClasses>
+      GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement
+    </JsModelsClasses>
+  </PropertyGroup>
 </Project>

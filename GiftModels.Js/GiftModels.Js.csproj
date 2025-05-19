@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <PackageId>GiftModels.JS</PackageId>
+        <Title>GiftModels JS</Title>
+        <Authors>Scott Kirkland</Authors>
+        <Description>Models which can be used to represents gifts</Description>
+        <PackageVersion>2.0.0</PackageVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="../artifacts/net8.0/Scripts/*.js" Pack="true"
+            PackagePath="content/Scripts/GiftModels/" />
+    </ItemGroup>
+    <Target Name="BuildGiftModels" BeforeTargets="Pack">
+        <!-- Build GiftModels.csproj first to ensure generated js files are available  -->
+        <MSBuild Projects="..\GiftModels\GiftModels.csproj" Targets="Build"
+            Properties="Configuration=$(Configuration)" />
+    </Target>
+</Project>
