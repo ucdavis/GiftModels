@@ -45,7 +45,7 @@ steps:
   displayName: 'Pack GiftModels.JS'
   inputs:
     command: 'pack'
-    packagesToPack: 'GiftModels/GiftModels.JS.csproj'
+    packagesToPack: 'GiftModels.Js/GiftModels.JS.csproj'
     configuration: '$(buildConfiguration)'
     packDirectory: 'artifacts'
     versioningScheme: 'off'
