@@ -1,82 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFC0C3D4-C8B6-4F22-9AA2-A33E422D5728}</ProjectGuid>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GiftModels</RootNamespace>
-    <AssemblyName>GiftModels</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\artifacts\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\artifacts\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- <OutputPath>..\artifacts\</OutputPath> -->
+    <AssemblyTitle>GiftModels</AssemblyTitle>
+    <Description>Models which can be used to represents gifts</Description>
+    <Company>UC Davis</Company>
+    <Product>GiftModels</Product>
+    <Copyright>Copyright © 2014</Copyright>
+    <Version>2.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="JsModels.Net" Version="2.0.38" PrivateAssets="none"
+      IncludeAssets="runtime; build" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acknowledgement.cs" />
-    <Compile Include="AllocationDetail.cs" />
-    <Compile Include="Attachment.cs" />
-    <Compile Include="Distribution.cs" />
-    <Compile Include="Helpers\DataAnnotationsHelper.cs" />
-    <Compile Include="KfsDetails.cs" />
-    <Compile Include="GiftDetails.cs" />
-    <Compile Include="DonorContainer.cs" />
-    <Compile Include="DonorDetail.cs" />
-    <Compile Include="FinancialDetails.cs" />
-    <Compile Include="PaymentContainer.cs" />
-    <Compile Include="Pledge.cs" />
-    <Compile Include="PremiumDetails.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rejection.cs" />
-    <Compile Include="ReviewDetails.cs" />
+    <Content Include="jsmodels-license.txt" Pack="true" PackagePath="content/" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Affiliate.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="jsmodels-license.txt" />
-    <Content Include="jsmodels.cmd.exe" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)jsmodels.cmd.exe" -i "$(TargetDir)GiftModels.dll" -o "$(TargetDir)Scripts" -x "GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement"</PostBuildEvent>
+    <GenerateJsModels>true</GenerateJsModels>
+    <JsModelsClasses>
+      GiftDetails,DonorContainer,DonorDetail,Distribution,Pledge,AllocationDetail,PaymentContainer,Attachment,FinancialDetails,PremiumDetails,KfsDetails,Affiliate,Acknowledgement
+    </JsModelsClasses>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

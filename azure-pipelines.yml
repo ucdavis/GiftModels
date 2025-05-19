@@ -1,17 +1,68 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  vmImage: 'windows-latest'
 
 variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  majorVersion: 2
+  minorVersion: 0
+  patchVersion: $[counter(variables['minorVersion'], 0)]
+  version: $(majorVersion).$(minorVersion).$(patchVersion)
+
+name: $(majorVersion).$(minorVersion).$(patchVersion)
+
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Restore'
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Pack GiftModels'
+  inputs:
+    command: 'pack'
+    packagesToPack: 'GiftModels/GiftModels.csproj'
+    configuration: '$(buildConfiguration)'
+    packDirectory: 'artifacts'
+    versioningScheme: 'off'
+    arguments: /p:PackageVersion=$(version)
+
+- task: DotNetCoreCLI@2
+  displayName: 'Pack GiftModels.JS'
+  inputs:
+    command: 'pack'
+    packagesToPack: 'GiftModels.Js/GiftModels.JS.csproj'
+    configuration: '$(buildConfiguration)'
+    packDirectory: 'artifacts'
+    versioningScheme: 'off'
+    arguments: /p:PackageVersion=$(version)
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
+  inputs:
+    PathtoPublish: 'artifacts'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: NuGetCommand@2
+  displayName: 'Push NuGet Packages'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+  inputs:
+    command: 'push'
+    packagesToPush: 'artifacts/**/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet UcDotNetAdmin'
