@@ -88,6 +88,8 @@ namespace GiftModels
         /// </summary>
         public IList<PremiumDetails> Premiums { get; set; }
 
+        public string IraDafIndicator { get; set; }
+
         #region Advance Properties
         public string AdvanceReceiptNumber { get; set; }
         public string AdvanceBatchNumber { get; set; }
