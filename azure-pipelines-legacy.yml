@@ -1,0 +1,66 @@
+trigger:
+- master-legacy
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  majorVersion: 1
+  minorVersion: 3
+  patchVersion: $[counter(format('{0}.{1}', variables['majorVersion'], variables['minorVersion']), 2)]
+  version: $(majorVersion).$(minorVersion).$(patchVersion)
+
+name: $(majorVersion).$(minorVersion).$(patchVersion)
+
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Restore'
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: MSBuild@1
+  displayName: 'Build'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  displayName: 'Pack GiftModels'
+  inputs:
+    command: 'pack'
+    packagesToPack: 'GiftModels/GiftModels.nuspec'
+    packDestination: 'artifacts'
+    versioningScheme: 'off'
+    buildProperties: 'version=$(version)'
+
+- task: NuGetCommand@2
+  displayName: 'Pack GiftModels.JS'
+  inputs:
+    command: 'pack'
+    packagesToPack: 'GiftModels/GiftModels.JS.nuspec'
+    packDestination: 'artifacts'
+    versioningScheme: 'off'
+    buildProperties: 'version=$(version)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
+  inputs:
+    PathtoPublish: 'artifacts'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: NuGetCommand@2
+  displayName: 'Push NuGet Packages'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master-legacy')
+  inputs:
+    command: 'push'
+    packagesToPush: 'artifacts/**/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet UcDotNetAdmin'

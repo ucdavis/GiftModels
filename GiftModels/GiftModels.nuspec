@@ -12,6 +12,6 @@
     <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
-    <file src="..\artifacts\GiftModels.dll" target="lib\net45" />
+    <file src="..\artifacts\GiftModels.dll" target="lib\net47" />
   </files>
 </package>
