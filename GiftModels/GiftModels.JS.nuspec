@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/ucdavis/GiftModels</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Models which can be used to represents gifts</description>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2026</copyright>
   </metadata>
   <files>
     <file src="..\artifacts\Scripts\*.js" target="content\Scripts\GiftModels" />
